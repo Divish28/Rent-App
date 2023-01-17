@@ -1,0 +1,39 @@
+h1.Login-Heading{
+    margin-top: 100px;
+    text-align: center;
+}
+.Login-form{
+    
+    border: 2px solid;
+    height: 250px;
+    width: 400px;
+    padding-top: 30px;
+    margin-left:40% ;
+    background-color: aquamarine;
+}
+
+label{
+    margin-left: 40px;
+    display: inline-block;
+}
+
+input{
+    display: inline-block;
+    margin: 20px;
+    height:25px;
+    /* margin-left: 40px; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+button #Login-submit{
+    height: 30px;
+    width: 80px;
+    margin-top: 15px;
+    margin-left: 38%;
+    border-radius: 8px;
+}
+.New-user{
+    text-align: center;
+}   
+#login-submit-button{
+    margin-left:38% ;
+}

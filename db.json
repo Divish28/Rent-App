@@ -1,0 +1,18 @@
+{
+  "user": [
+    {
+      "userName": "Divish",
+      "email": "divish@gmail.com",
+      "mobileNumber": "7904120417",
+      "password": "aspiresys",
+      "id": 1
+    },
+    {
+      "userName": "Divish",
+      "email": "divish@gmail.com",
+      "mobileNumber": "7904120417",
+      "password": "aspiresys",
+      "id": 2
+    }
+  ]
+}
