@@ -43,24 +43,13 @@ const Header = () => {
       {
         auth ?
 
-        <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand>Rental</Navbar.Brand>
-          <Nav className="me-auto">
-            <NavLink to="/Home" className={"text-decoration-none text-light mx-3"}>Home</NavLink>
-            <NavLink to="/Listing" className={"text-decoration-none text-light mx-3"}>House List</NavLink>
-            <NavLink to="/Login" className={"text-decoration-none text-light mx-3"}>Login</NavLink>
-          </Nav>
-        </Container>
-      </Navbar> :
-
           <Navbar bg="dark" variant="dark">
             <Container>
               <Navbar.Brand>Rental</Navbar.Brand>
               <Nav className="me-auto">
                 <NavLink to="/Home" className={"text-decoration-none text-light mx-3"}>Home</NavLink>
                 <NavLink to="/Listing" className={"text-decoration-none text-light mx-3"}>House List</NavLink>
-                <NavLink to="/Home" className={"text-decoration-none text-light mx-3"}>Logout</NavLink>
+                <NavLink to="/" className={"text-decoration-none text-light mx-3"}>Logout</NavLink>
               </Nav>
               <Badge badgeContent={getData.length} color="primary"
                 id="basic-button"
@@ -126,7 +115,17 @@ const Header = () => {
               }
             </Menu>
           </Navbar>
-        
+          :
+                <Navbar bg="dark" variant="dark">
+                <Container>
+                  <Navbar.Brand>Rental</Navbar.Brand>
+                  <Nav className="me-auto">
+                    <NavLink to="/Home" className={"text-decoration-none text-light mx-3"}>Home</NavLink>
+                    <NavLink to="/Listing" className={"text-decoration-none text-light mx-3"}>House List</NavLink>
+                    <NavLink to="/Login" className={"text-decoration-none text-light mx-3"}>Login</NavLink>
+                  </Nav>
+                </Container>
+              </Navbar> 
       }
     </div>
   )
