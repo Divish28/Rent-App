@@ -8,6 +8,8 @@ import Signup from './component/Signup';
 import Home from './component/Home';
 import ShortList from './component/ShortList';
 import Invalid from './component/Invalid';
+import Details from './component/Details';
+import { AuthProvider } from './component/auth';
 
 function App() {
   return (
@@ -16,13 +18,15 @@ function App() {
       {/* <Cards /> */}
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="Home" element={<Home/>}/>
-        <Route path="Listing" element={<Cards/>}/>
-        <Route path="Login" element={<Login/>}/>
-        <Route path="Signup" element={<Signup/>}/>
+        <Route path="/Home" element={<Home/>}/>
+        <Route path="/Listing" element={<Cards/>}/>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/Signup" element={<Signup/>}/>
         <Route path='/ShortList/:id' element={<ShortList/>}/>
+        <Route path='Details' element={<Details/>}/>
         <Route path="*" element={<Invalid/>}/>
       </Routes>
+  
     </div>
   );
 }

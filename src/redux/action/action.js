@@ -4,3 +4,10 @@ export const ADD = (house) => {
         payload:house
     }
 }
+
+export const DLT=(id)=>{
+    return{
+        type:"REMOVE_SHORTLIST",
+        payload:id
+    }
+}

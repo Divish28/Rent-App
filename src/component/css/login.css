@@ -3,12 +3,13 @@ h1.Login-Heading{
     text-align: center;
 }
 .Login-form{
-    
+
+    display: table;
     border: 2px solid;
     height: 250px;
     width: 400px;
     padding-top: 30px;
-    margin-left:40% ;
+    margin:auto;
     background-color: aquamarine;
 }
 

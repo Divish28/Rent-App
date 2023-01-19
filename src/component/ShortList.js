@@ -1,14 +1,17 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Table from 'react-bootstrap/Table'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import './css/card.css'
 
 
 const ShortList = () => {
 
 
   const [list, setList] = useState([]);
+  console.log("elem", list)
   const { id } = useParams()
+  // console.log(id)
 
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists)
@@ -35,25 +38,35 @@ const ShortList = () => {
         <section className='container mt-3'>
           <div className='itemsdetails'>
             {
-              list.map((element) => {
+              list.map((elem) => {
                 return (
                   <>
                     <div className='items_img'>
-                      <img src={element.addimg} alt='' />
+                      <img src={elem.addimg} alt='houseimg' />
                     </div>
                     <div className='details'>
                       <Table>
                         <tr>
                           <td>
-                            <p><strong>City :</strong>{element.city}</p>
+                            <p><strong>City :</strong>{elem.city}</p>
+                          </td>
+                          <td>
+                            <p><strong>Rent:</strong>{elem.rent}</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p><strong>Owner Number:</strong>{elem.number}</p>
                           </td>
                         </tr>
                       </Table>
                     </div>
+
                   </>
                 )
               })
             }
+
           </div>
         </section>
       </div>

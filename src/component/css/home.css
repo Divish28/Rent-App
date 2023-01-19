@@ -5,3 +5,7 @@ img{
     height: 900px;
     width:1830px
 }
+
+@media (max-width:450px){
+
+}

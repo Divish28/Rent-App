@@ -1,7 +1,16 @@
 .card_style{
     cursor: pointer;
     transition: .3s;
+    margin-top: 100px;
+
 }
+
+/* .cards{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+} */
+
   
   .smalltrash{
       display: none;
@@ -47,12 +56,10 @@
   @media (max-width:450px){
       .smalltrash{
           display: block;
+          color: red;
       }
       .largetrash{
           display:none;
-      }
-      .emptycart_img{
-          margin-right: 50px;
       }
       .smallclose{
           display: none;

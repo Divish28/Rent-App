@@ -3,11 +3,12 @@ h1.Signup-Heading{
     text-align: center;
 }
 .Signup-form{
+    display: table;
     border: 2px solid;
     height: 380px;
     width: 450px;
     padding-top: 30px;
-    margin-left:38% ;
+    margin:auto ;
     background-color: aquamarine;
 }
 
@@ -34,4 +35,10 @@ input{
 } */
 .Existing-user{
     text-align: center ;
+}
+input:valid{
+    border-color: green;
+}
+input:invalid{
+    border-color: red;
 }

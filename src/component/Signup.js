@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
-import { json, Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import './css/signup.css'
-import Login from './Login'
+// import Login from './Login'
 
 const Signup=()=> {
 
@@ -19,8 +19,8 @@ const Signup=()=> {
       let registerData={userName,email,mobileNumber,password}
       console.log(registerData)
       axios.post("http://localhost:8000/user",registerData).then((res)=>{
-        navigation(Login)
         alert("registered")
+        navigation("/Login")
       }).catch(error=>{
         alert("not registered")
       })
@@ -38,7 +38,7 @@ const Signup=()=> {
                  <label>Mobile :</label>
                  <input value={mobileNumber} onChange={e=>setMobileNumber(e.target.value)} required type="text" placeholder='Mobile Number'/>
                  <label>Password:</label>
-                 <input value={password} onChange={e=>setPassword(e.target.value)} type="password" required placeholder='Password'/>
+                 <input value={password} onChange={e=>setPassword(e.target.value)} type="password" required placeholder='Password' pattern='(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'/>
                  {/* <button type='submit'>Register</button> */}
                  <input id='signup-submit' type="submit"/>
          </form>

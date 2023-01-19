@@ -10,6 +10,13 @@ export const shortlistReducer = (state = INIT_STATE, action) => {
                 Shortlists: [...state.Shortlists, action.payload]
             }
 
+        case "REMOVE_SHORTLIST":
+            const data= state.Shortlists.filter((el)=>el.id !== action.payload )
+            return{
+                ...state,
+                Shortlists:data
+            }
+
         default:
             return state
     }
