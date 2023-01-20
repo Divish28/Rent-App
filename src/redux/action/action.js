@@ -11,3 +11,10 @@ export const DLT=(id)=>{
         payload:id
     }
 }
+
+export const DISP=(detail)=>{
+    return{
+        type:"DISPLAY_DETAILS",
+        payload:detail
+    }
+}

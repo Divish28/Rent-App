@@ -12,7 +12,7 @@ const Signup=()=> {
     const [password,setPassword]=useState("")
     const navigation= useNavigate()
   
-  
+    const areAllFieldsFilled = (userName === "") || (email === "") || (mobileNumber === "") || (password === "")
     
     const handleSubmit=(e)=>{
       e.preventDefault()
@@ -22,7 +22,7 @@ const Signup=()=> {
         alert("registered")
         navigation("/Login")
       }).catch(error=>{
-        alert("not registered")
+        alert("Not registered:"+error)
       })
     }
 
@@ -40,7 +40,7 @@ const Signup=()=> {
                  <label>Password:</label>
                  <input value={password} onChange={e=>setPassword(e.target.value)} type="password" required placeholder='Password' pattern='(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'/>
                  {/* <button type='submit'>Register</button> */}
-                 <input id='signup-submit' type="submit"/>
+                 <input id='signup-submit' hidden={areAllFieldsFilled} disabled={areAllFieldsFilled} type="submit"/>
          </form>
          <div className='Existing-user'>
              <NavLink to={'/Login'}>Existing user</NavLink>

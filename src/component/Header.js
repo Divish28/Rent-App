@@ -16,10 +16,10 @@ import './css/card.css'
 
 const Header = () => {
 
-
-  const dispatch = useDispatch()
-
   const auth = sessionStorage.getItem('email')
+  const logout=()=>{
+    sessionStorage.clear()
+  }
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -30,12 +30,15 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+
+  const dispatch = useDispatch()
+
   const del = (id) => {
     dispatch(DLT(id))
   }
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists)
-  console.log(getData)
+  // console.log(getData)
 
 
   return (
@@ -49,7 +52,7 @@ const Header = () => {
               <Nav className="me-auto">
                 <NavLink to="/Home" className={"text-decoration-none text-light mx-3"}>Home</NavLink>
                 <NavLink to="/Listing" className={"text-decoration-none text-light mx-3"}>House List</NavLink>
-                <NavLink to="/" className={"text-decoration-none text-light mx-3"}>Logout</NavLink>
+                <NavLink onClick={logout} to="/Login" className={"text-decoration-none text-light mx-3"}>Logout</NavLink>
               </Nav>
               <Badge badgeContent={getData.length} color="primary"
                 id="basic-button"

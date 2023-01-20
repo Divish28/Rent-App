@@ -8,7 +8,7 @@ import './css/card.css'
 import { useNavigate } from 'react-router-dom';
 import Details from './Details';
 
-function Cards() {
+const Cards=()=> {
 
     const [city, setCity] = useState("")
     const navigate = useNavigate()

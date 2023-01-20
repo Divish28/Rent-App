@@ -36,5 +36,9 @@ button #Login-submit{
     text-align: center;
 }   
 #login-submit-button{
-    margin-left:38% ;
+    display: table ;
+    margin: auto;
+    margin-top: 10px;
+    border: solid 1px;
+
 }

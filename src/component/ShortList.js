@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Table from 'react-bootstrap/Table'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import './css/card.css'
+
 
 
 const ShortList = () => {
@@ -10,6 +10,7 @@ const ShortList = () => {
 
   const [list, setList] = useState([]);
   console.log("elem", list)
+
   const { id } = useParams()
   // console.log(id)
 
@@ -29,10 +30,30 @@ const ShortList = () => {
     compare()
   }, [id])
 
+  // return(
+  //   <div className='container mt-2'>
+  //     <h2 className='text-center' >ShortListed items</h2>
+  //     <section className='container mt-3'>
+  //       <div className='itemdetails'>
+  //         {
+  //           list.map((ele)=>{
+  //             return(
+  //               <>
+  //               <div>
 
+  //               </div>
+  //               </>
+  //             )
+  //           })
+  //         }
+  //       </div>
+  //     </section>
+  //   </div>
+
+  // )
 
   return (
-    <>
+  
       <div className='container mt-2'>
         <h2 className='text-center'>Shortlisted Items</h2>
         <section className='container mt-3'>
@@ -41,7 +62,7 @@ const ShortList = () => {
               list.map((elem) => {
                 return (
                   <>
-                    <div className='items_img'>
+                    <div className='items_img' >
                       <img src={elem.addimg} alt='houseimg' />
                     </div>
                     <div className='details'>
@@ -70,7 +91,7 @@ const ShortList = () => {
           </div>
         </section>
       </div>
-    </>
+    
   )
 }
 
