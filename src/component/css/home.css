@@ -1,5 +1,7 @@
 h4{
+    flex:table;
     text-align: center;
+    margin-top:10px ;
 }
 img{
     height: 900px;

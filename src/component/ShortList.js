@@ -1,98 +1,108 @@
-import React, { useState, useEffect } from 'react'
-import Table from 'react-bootstrap/Table'
-import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-
-
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import './css/card.css'
 
 const ShortList = () => {
 
-
   const [list, setList] = useState([]);
-  console.log("elem", list)
+  // console.log("elem", list);
+  const navigate = useNavigate()
 
-  const { id } = useParams()
+  const { id } = useParams();
   // console.log(id)
 
-
-  const getData = useSelector((state) => state.shortlistReducer.Shortlists)
+  const getData = useSelector((state) => state.shortlistReducer.Shortlists);
   // console.log(getData)
-
 
   const compare = () => {
     let comparedata = getData.filter((e) => {
-      return e.id == id
-    })
-    setList(comparedata)
-  }
+      return e.id == id;
+    });
+    setList(comparedata);
+  };
 
   useEffect(() => {
-    compare()
-  }, [id])
-
-  // return(
-  //   <div className='container mt-2'>
-  //     <h2 className='text-center' >ShortListed items</h2>
-  //     <section className='container mt-3'>
-  //       <div className='itemdetails'>
-  //         {
-  //           list.map((ele)=>{
-  //             return(
-  //               <>
-  //               <div>
-
-  //               </div>
-  //               </>
-  //             )
-  //           })
-  //         }
-  //       </div>
-  //     </section>
-  //   </div>
-
-  // )
+    compare();
+  }, [id]);
 
   return (
-  
-      <div className='container mt-2'>
-        <h2 className='text-center'>Shortlisted Items</h2>
-        <section className='container mt-3'>
-          <div className='itemsdetails'>
-            {
-              list.map((elem) => {
-                return (
-                  <>
-                    <div className='items_img' >
-                      <img src={elem.addimg} alt='houseimg' />
-                    </div>
-                    <div className='details'>
-                      <Table>
-                        <tr>
-                          <td>
-                            <p><strong>City :</strong>{elem.city}</p>
-                          </td>
-                          <td>
-                            <p><strong>Rent:</strong>{elem.rent}</p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p><strong>Owner Number:</strong>{elem.number}</p>
-                          </td>
-                        </tr>
-                      </Table>
-                    </div>
+    <>
+      <div className="container mt-5 shortlist">
+        <h2 className="text-center">SHORTLISTED HOUSE DETAILS</h2>
 
-                  </>
-                )
-              })
-            }
+        <section className="container mt-5">
+          <div className="iteamsdetails">
+            {list.map((elem) => {
+              return (
+                <>
+                  <div className="items_img">
+                    <img src={elem.addimg} alt="" style={{height:"30rem"}}/>
+                  </div>
 
+                  <div className="details">
+                    <Table>
+                    <tr>
+                        <td>
+                          <p>
+                            <strong>City: </strong> {elem.city}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <strong>Rooms</strong> : {elem.type}
+                          </p>
+                          <p>
+                            <strong>Rent</strong> : ₹{elem.rent}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <strong>Owner Name:</strong> {elem.name}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <strong>Owner Number:</strong> {elem.number}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td>
+                          <p>
+                            <strong>Furnished: </strong>{elem.furnished}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td>
+                          <p>
+                            <strong>Description:</strong>{elem.description}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td>
+                         <button onClick={()=>navigate(-1)}>GO BACK</button>
+                        </td>
+                      </tr>
+                    </Table>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </section>
       </div>
-    
-  )
-}
+    </>
+  );
+};
 
-export default ShortList
+export default ShortList;

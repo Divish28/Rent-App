@@ -1,62 +1,76 @@
-import React, { useState, useEffect } from 'react'
-import Table from 'react-bootstrap/Table'
-import { useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import './css/card.css'
-import { DISP } from '../redux/action/action'
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import "./css/card.css";
+import { DISP } from "../redux/action/action";
 
-const Details=()=> {
+const Details = () => {
 
-  const [details,setDetails]=useState()
-  const dispatch=useDispatch()
+  const [list, setList] = useState([]);
+  // console.log("elem", list);
+  const navigate = useNavigate
 
-  const getDetails=useSelector((state) => state.shortlistReducer.Shortlists)
+  const { id } = useParams();
+  // console.log(id)
 
-  const imp = (elem) => {
-    dispatch(DISP(elem))
-  }
+  const getDetails = useSelector((state) => state.shortlistReducer.Shortlists);
+  // console.log(getData)
 
-  const{id}= useParams()
+  const compare = () => {
+    let comparedata = getDetails.filter((e) => {
+      return e.id == id;
+    });
+    setList(comparedata);
+  };
 
-  return(
+  useEffect(() => {
+    compare();
+  }, [id]);
+  // const dispatch = useDispatch();
+  // const [details, setDetails] = useState();
+
+  // const getDetails = useSelector((state) => state.displayreducer.data);
+
+  // const imp = (elem) => {
+  //   dispatch(DISP(elem));
+  // };
+
+  return (
     <>
-    {
-    getDetails.length ?
-                  <div className='card_details' style={{ width: "24rem", padding: 10 }}>
-                    <Table>
-                      <thead>
+      {getDetails.length ? (
+        <div className="card_details" style={{ width: "24rem", padding: 10 }}>
+          <Table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {getDetails.map((e) => {
+                return (
+                  <>
+                    <div>
+                      <h2>true</h2>
+                      <table>
                         <tr>
-                          <th>Image</th>
-                          <th>Details</th>
+                          <td>
+                            <img src={e.addimg} />
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {
-                          getDetails.map((e) => {
-                            return (
-                              <>
-                              <div>
-                                <h2>true</h2>
-                                <table>
-                                  <tr>
-                                    <td>
-                                      <img src={e.addimg} />
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                              </>
-                            )
-                          })
-                        }
-                      </tbody>
-                    </Table>
-                  </div> 
-                  :
-                    <h2> False </h2>
-              }
-
+                      </table>
+                    </div>
+                  </>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div>
+      ) : (
+        <h2> False </h2>
+      )}
     </>
-  )
-}
-export default Details
+  );
+};
+export default Details;

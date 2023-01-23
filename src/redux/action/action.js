@@ -12,9 +12,9 @@ export const DLT=(id)=>{
     }
 }
 
-export const DISP=(detail)=>{
+export const DISP=(id)=>{
     return{
         type:"DISPLAY_DETAILS",
-        payload:detail
+        payload:id
     }
 }

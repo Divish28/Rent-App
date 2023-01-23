@@ -39,14 +39,11 @@ input{
     display: table;
     margin: auto;
     margin-top: 10px;
-    background-color: aliceblue;
+    background-color: rgb(117, 173, 218);
     color: black;
   }
 
-/* button{
-    margin-top: 15px;
-    margin-left: 38%;
-} */
+
 .Existing-user{
     text-align: center ;
 }
