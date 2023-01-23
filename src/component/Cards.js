@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import HouseData from "./HouseData";
 import { ADD, DISP } from "../redux/action/action";
 import "./css/card.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Details from "./Details";
 
 const Cards = () => {
@@ -24,9 +24,6 @@ const Cards = () => {
     dispatch(ADD(e));
   };
 
-  const details = (ele) => {
-    navigate("/Details");
-  };
 
   return (
     <div className="container mt-3 Listing">
@@ -40,12 +37,12 @@ const Cards = () => {
                 className="mx-2 mx-4 card_style"
               >
                 <Card.Img
-                  onClick={details}
+                  onClick={()=>navigate(`/Details/${element.id}`)}
                   variant="top"
                   src={element.addimg}
                   className="mt-3 cardimg"
                 />
-                <Card.Body onClick={details}>
+                <Card.Body onClick={()=>navigate(`/Details/${element.id}`)}>
                   <Card.Title><strong>City: </strong>{element.city}</Card.Title>
                   <Card.Text><strong>Type: </strong>{element.category}</Card.Text>
                   <Card.Text><strong>Rooms: </strong>{element.type}</Card.Text>
