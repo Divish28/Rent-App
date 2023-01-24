@@ -1,6 +1,23 @@
 body{
     background-image: linear-gradient(to right, lightblue, white);
 }
+.Listing{
+    display: table;
+    margin: auto;
+}
+.navbar{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    background-color: rgb(73, 156, 156);
+}
+.brand-Text{
+    color: black;
+    font-size: xx-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.brand-Text:hover{
+    color: black;
+}
 .card_style{
     width: 22rem;
     border: solid 1 px;
@@ -11,6 +28,25 @@ body{
     background-color: rgb(180, 220, 220);
 
 }
+
+.Search-form{
+    display: table;
+    margin: auto;
+}
+.search-label{
+    display:flexbox;
+}
+
+
+.search-bar{
+    border:solid 1px;
+    display: inline-block;
+    margin: 20px;   
+    width: 25rem;
+    height: 40px;
+    
+}
+
 
 .cardimg{
     height: 16rem;
@@ -55,7 +91,7 @@ body{
   .details{
       flex: .5;
   };
-  
+
 
 
   @media (max-width:772px){
@@ -69,7 +105,7 @@ body{
   @media (max-width:450px){
       .smalltrash{
           display: block;
-          color: red;
+          color: rgb(255, 0, 0);
       }
       .largetrash{
           display:none;

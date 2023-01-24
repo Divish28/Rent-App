@@ -7,14 +7,12 @@ import './css/card.css'
 const ShortList = () => {
 
   const [list, setList] = useState([]);
-  // console.log("elem", list);
+  
   const navigate = useNavigate()
 
   const { id } = useParams();
-  // console.log(id)
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists);
-  // console.log(getData)
 
   const compare = () => {
     let comparedata = getData.filter((e) => {

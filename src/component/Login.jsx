@@ -1,19 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { json, Navigate, NavLink, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "./auth";
 import "./css/login.css";
-// import Home from './Home'
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [password, setPassword] = useState("");  const navigate = useNavigate();
   const auth = useAuth();
 
   useEffect(() => {
     sessionStorage.clear();
   }, []);
+
 
   const loginverify = (e) => {
     if (
@@ -43,7 +42,7 @@ const Login = () => {
             if (resp[0].password === password) {
               alert("Login Success");
               sessionStorage.setItem("email", email);
-              navigate("/Home");
+              navigate("/Listing");
             } else {
               alert("Enter Correct Password");
             }
@@ -61,6 +60,7 @@ const Login = () => {
       <form className="Login-form" onSubmit={loginverify}>
         <label id="Login-username-label">Email:</label>
         <input
+          className="Login-input"
           id="Login-username-input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -70,17 +70,17 @@ const Login = () => {
         />
         <label id="Login-password-label">Password:</label>
         <input
+          className="Login-input"
           id="Login-password-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Password"
-          required
-        ></input>
+        />
         <input id="login-submit-button" type={"submit"} value="Submit" />
       </form>
       <div className="New-user">
-        <NavLink to={"/Signup"}>New User?</NavLink>
+        New User ? <NavLink to={"/Signup"}>Register</NavLink>
       </div>
     </div>
   );

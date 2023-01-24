@@ -1,25 +1,20 @@
 import Badge from "@mui/material/Badge";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { nav, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import Login from "./Login";
 import { Table } from "@mui/material";
 import { DLT } from "../redux/action/action";
 import "./css/card.css";
 
 const Header = () => {
-  const auth = sessionStorage.getItem("email");
 
-  const logout = () => {
-    sessionStorage.clear();
-  };
+  const auth = sessionStorage.getItem("email");
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -37,14 +32,13 @@ const Header = () => {
   };
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists);
-  // console.log(getData)
 
   return (
     <div>
       {auth ? (
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand>Rental</Navbar.Brand>
+        <Navbar className="navbar"  variant="dark">
+          <Container className="nav-container">
+            <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
               <NavLink
                 to="/Home"
@@ -59,7 +53,6 @@ const Header = () => {
                 House List
               </NavLink>
               <NavLink
-                onClick={logout}
                 to="/Login"
                 className={"text-decoration-none text-light mx-3"}
               >
@@ -183,9 +176,9 @@ const Header = () => {
           </Menu>
         </Navbar>
       ) : (
-        <Navbar bg="dark" variant="dark">
+        <Navbar className="navbar" variant="dark">
           <Container>
-            <Navbar.Brand>Rental</Navbar.Brand>
+            <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
               <NavLink
                 to="/Home"

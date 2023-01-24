@@ -1,11 +1,17 @@
 h4{
     flex:table;
     text-align: center;
-    margin-top:10px ;
+    margin-top:40px ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
 }
-img{
-    height: 900px;
-    width:1830px
+img.homeimg{
+    position: absolute;
+    opacity: 60%;
+    height: 950px;
+    width:1830px;
+    z-index: -1;
+    top: 0;
 }
 
 @media (max-width:450px){

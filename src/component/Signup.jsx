@@ -1,8 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./css/signup.css";
-// import Login from './Login'
 
 const Signup = () => {
   const [userName, setUsername] = useState("");
@@ -35,6 +34,7 @@ const Signup = () => {
       <form className="Signup-form" onSubmit={handleSubmit}>
         <label>Username:</label>
         <input
+          className="signup-input"
           value={userName}
           onChange={(e) => setUsername(e.target.value)}
           type="text"
@@ -43,6 +43,7 @@ const Signup = () => {
         />
         <label>E-mail:</label>
         <input
+          className="signup-input"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
@@ -51,6 +52,7 @@ const Signup = () => {
         />
         <label>Mobile :</label>
         <input
+          className="signup-input"
           value={mobileNumber}
           onChange={(e) => setMobileNumber(e.target.value)}
           required
@@ -59,6 +61,7 @@ const Signup = () => {
         />
         <label>Password:</label>
         <input
+          className="signup-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
@@ -74,7 +77,7 @@ const Signup = () => {
         />
       </form>
       <div className="Existing-user">
-        <NavLink to={"/Login"}>Existing user</NavLink>
+      Existing user ? <NavLink to={"/Login"}>Login</NavLink>
       </div>
     </div>
   );

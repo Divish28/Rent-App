@@ -6,12 +6,12 @@ h1.Login-Heading{
 .Login-form{
 
     display: table;
-    border: 2px solid;
+    border: 1px solid;
     height: 250px;
     width: 400px;
     padding-top: 30px;
     margin:auto;
-    background-color: aquamarine;
+    background-color: rgb(184, 201, 213);
 }
 
 label{
@@ -19,27 +19,42 @@ label{
     display: inline-block;
 }
 
-input{
+input.Login-input{
+
     display: inline-block;
     margin: 20px;
-    height:25px;
-    /* margin-left: 40px; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height:2rem;
+    width: 12rem;
+    border: solid .01px;
+    border-radius: 7px;
+    font-family:cursive;
 }
 button #Login-submit{
     height: 30px;
     width: 80px;
     margin-top: 15px;
-    margin-left: 38%;
     border-radius: 8px;
 }
 .New-user{
     text-align: center;
 }   
 #login-submit-button{
-    display: table ;
+    display: table;
     margin: auto;
     margin-top: 10px;
     border: solid 1px;
-
+    border-radius: 10px;
+    width: 7rem;
+    height: 2rem;
+    background-color:rgb(196, 217, 234) ;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    /* display: table ;
+    margin: auto;
+    margin-top: 20px;
+    border: solid .1px;
+    border-radius: 5px; */
+}
+#login-submit-button:hover{
+    background-color:aliceblue ;
 }

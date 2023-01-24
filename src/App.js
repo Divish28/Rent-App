@@ -8,7 +8,6 @@ import Home from './component/Home';
 import ShortList from './component/ShortList';
 import Invalid from './component/Invalid';
 import Details from './component/Details';
-import { AuthProvider } from './component/auth';
 
 function App() {
   return (

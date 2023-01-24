@@ -4,25 +4,29 @@ h1.Signup-Heading{
 }
 .Signup-form{
     display: table;
-    border: 2px solid;
-    height: 380px;
-    width: 450px;
-    padding-top: 30px;
+    border: 1px solid;
+    height: 500px;
+    width: 500px;
+    padding-top: 40px;
     margin:auto ;
-    background-color: aquamarine;
+    background-color: rgb(184, 201, 213);
 }
 
 label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
     display:inline-block;
     text-align: right;
     width: 90px;
 }
 
-input{
+input.signup-input{
+    height: 2rem;
+    width:16rem;
+    border: solid .01px;
     display: inline-block;
-    margin: 20px;
-    /* margin-left: 40px; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 30px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 #signup-submit{
@@ -33,13 +37,16 @@ input{
   border-radius: 10px;
   width: 7rem;
   height: 2rem;
+  background-color:rgb(196, 217, 234) ;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
 }
 
 #signup-submit:disabled{
     display: table;
     margin: auto;
     margin-top: 10px;
-    background-color: rgb(117, 173, 218);
+    background-color: rgb(225, 237, 248);
     color: black;
   }
 
@@ -47,9 +54,9 @@ input{
 .Existing-user{
     text-align: center ;
 }
-input:valid{
+/* input:valid{
     border-color: green;
 }
 input:invalid{
     border-color: red;
-}
+} */
