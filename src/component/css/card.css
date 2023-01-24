@@ -34,6 +34,7 @@ body{
     margin: auto;
 }
 .search-label{
+    font-size: larger;
     display:flexbox;
 }
 
