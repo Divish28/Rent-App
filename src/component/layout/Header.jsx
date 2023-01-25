@@ -13,7 +13,6 @@ import { DLT } from "../../redux/action/action";
 import "../css/card.css";
 
 const Header = () => {
-
   const auth = sessionStorage.getItem("email");
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -36,7 +35,7 @@ const Header = () => {
   return (
     <div>
       {auth ? (
-        <Navbar className="navbar"  variant="dark">
+        <Navbar className="navbar" variant="dark">
           <Container className="nav-container">
             <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
@@ -69,9 +68,7 @@ const Header = () => {
               onClick={handleClick}
               // class="text-light"
             >
-              <i
-                class="fa-regular fa-heart heart-badge"
-              ></i>
+              <i class="fa-regular fa-heart heart-badge"></i>
             </Badge>
           </Container>
           <Menu
@@ -84,9 +81,7 @@ const Header = () => {
             }}
           >
             {getData.length ? (
-              <div
-                className="card_details"
-              >
+              <div className="card_details">
                 <Table>
                   <thead>
                     <tr>
@@ -101,7 +96,6 @@ const Header = () => {
                           <i
                             className="fas fa-close smallclose"
                             onClick={handleClose}
-
                           ></i>
                           <tr>
                             <td>
@@ -111,7 +105,7 @@ const Header = () => {
                               >
                                 <img
                                   src={e.addimg}
-                                  className="shortlistimg"                                  
+                                  className="shortlistimg"
                                   alt="House"
                                 />
                               </NavLink>
@@ -121,12 +115,12 @@ const Header = () => {
                               <p>Rent: {e.rent}</p>
                               <p>Rooms: {e.type}</p>
                             </td>
-                            <td
-                              className="trash"
-                              onClick={() => del(e.id)}
-                            >
+                            <td className="trash">
                               <p>
-                                <i className="fas fa-trash largetrash"></i>
+                                <i
+                                  onClick={() => del(e.id)}
+                                  className="fas fa-trash largetrash"
+                                ></i>
                               </p>
                             </td>
                           </tr>
@@ -137,9 +131,7 @@ const Header = () => {
                 </Table>
               </div>
             ) : (
-              <div
-                className="card_details"
-              >
+              <div className="card_details">
                 <i
                   className="fas fa-close smallclose"
                   onClick={handleClose}

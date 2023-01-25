@@ -6,6 +6,8 @@ import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
 import "../css/card.css";
 import { useNavigate } from "react-router-dom";
+import { toast,ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cards = () => {
   
@@ -16,6 +18,12 @@ const Cards = () => {
   const [list, setList] = useState(HouseData);
 
   const auth = sessionStorage.getItem("email");
+
+  const showToastMessage = () => {
+    toast.success('Shortlisted !', {
+        position: toast.POSITION.TOP_CENTER
+    });
+};
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
@@ -35,6 +43,7 @@ const Cards = () => {
   const dispatch = useDispatch();
   const send = (e) => {
     dispatch(ADD(e));
+    showToastMessage();
   };
 
   return (
@@ -60,6 +69,7 @@ const Cards = () => {
                       onClick={() => navigate(`/Details/${element.id}`)}
                       variant="top"
                       src={element.addimg}
+                      alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
@@ -86,6 +96,7 @@ const Cards = () => {
                       >
                         Shortlist
                       </Button>
+                      <ToastContainer/>
                     </div>
                   </Card>
                 </>
@@ -96,6 +107,7 @@ const Cards = () => {
                       onClick={() => navigate(`/Details/${element.id}`)}
                       variant="top"
                       src={element.addimg}
+                      alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
@@ -136,6 +148,7 @@ const Cards = () => {
                       variant="top"
                       src={element.addimg}
                       className="mt-3 cardimg"
+                      alt="House"
                     />
                     <Card.Body
                       onClick={() => navigate(`/Details/${element.id}`)}
@@ -171,6 +184,7 @@ const Cards = () => {
                       onClick={() => navigate(`/Details/${element.id}`)}
                       variant="top"
                       src={element.addimg}
+                      alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
