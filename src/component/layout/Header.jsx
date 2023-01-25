@@ -9,8 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Table } from "@mui/material";
-import { DLT } from "../redux/action/action";
-import "./css/card.css";
+import { DLT } from "../../redux/action/action";
+import "../css/card.css";
 
 const Header = () => {
 

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch } from "react-redux";
-import HouseData from "./HouseData";
-import { ADD } from "../redux/action/action";
-import "./css/card.css";
+import HouseData from "../HouseData";
+import { ADD } from "../../redux/action/action";
+import "../css/card.css";
 import { useNavigate } from "react-router-dom";
 
 const Cards = () => {

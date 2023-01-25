@@ -1,7 +1,6 @@
 import React from 'react'
-import house from './images/House.jpg'
-import './css/home.css'
-import { useNavigate } from 'react-router-dom'
+import house from '../images/House.jpg'
+import '../css/home.css'
 
 const Home=()=> {
   return (

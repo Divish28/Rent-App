@@ -1,13 +1,13 @@
 import './App.css';
-import Header from './component/Header';
-import Cards from './component/Cards'
+import Header from './component/layout/Header';
+import Cards from './component/listing/Cards'
 import { Route,Routes } from 'react-router-dom';
-import Login from './component/Login';
-import Signup from './component/Signup';
-import Home from './component/Home';
-import ShortList from './component/ShortList';
+import Login from './component/user/Login';
+import Signup from './component/user/Signup';
+import Home from './component/layout/Home';
+import ShortList from './component/listing/ShortList';
 import Invalid from './component/Invalid';
-import Details from './component/Details';
+import Details from './component/listing/Details';
 
 function App() {
   return (

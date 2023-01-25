@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import './css/card.css'
+import "../css/card.css";
+import HouseData from "../HouseData";
 
-const ShortList = () => {
+const Details = () => {
 
-  const [list, setList] = useState([]);
-  
   const navigate = useNavigate()
-
   const { id } = useParams();
-
-  const getData = useSelector((state) => state.shortlistReducer.Shortlists);
+  
+  const [list, setList] = useState([]);
 
   const compare = () => {
-    let comparedata = getData.filter((e) => {
+    let comparedata = HouseData.filter((e) => {
       return e.id == id;
     });
     setList(comparedata);
@@ -25,10 +22,11 @@ const ShortList = () => {
     compare();
   }, [id]);
 
+
   return (
     <>
       <div className="container mt-5 shortlist">
-        <h2 className="text-center">SHORTLISTED HOUSE DETAILS</h2>
+        <h2 className="text-center">DETAILS</h2>
 
         <section className="container mt-5">
           <div className="iteamsdetails">
@@ -102,5 +100,4 @@ const ShortList = () => {
     </>
   );
 };
-
-export default ShortList;
+export default Details;

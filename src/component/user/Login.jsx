@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {  NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "./auth";
-import "./css/login.css";
+import { useAuth } from "../auth";
+import "../css/login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
