@@ -13,7 +13,6 @@ function App() {
   return (
     <div>
       <Header/>
-      {/* <Cards /> */}
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Home" element={<Home/>}/>

@@ -59,7 +59,7 @@ const Cards = () => {
         />
         {/* <input classname="search-button" type="submit" value="Submit" /> */}
       </form>
-      <div className="row d-flex justified-content-center align-item-center">
+      <div className="row d-flex cardList">
         {searchInput.length > 1
           ? filteredResults.map((element) => {
               return auth ? (

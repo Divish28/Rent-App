@@ -42,6 +42,15 @@ body{
     font-size: larger;
     cursor: pointer;
 }
+
+
+/* Listing Page */
+.cardList{
+    margin: auto;
+    justify-content: center;
+    column-gap: 3rem;
+}
+
 .card_details{
     display: flex;
     justify-content: center;
@@ -50,15 +59,13 @@ body{
     padding: 10px;
 }
 
-
-/* Listing Page */
 .card_style{
     width: 22rem;
     border: solid 1 px;
     cursor: pointer;
-    transition: .3s;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 50px;
+    margin-left: 10px;
     background-color: rgb(180, 220, 220);
 }
 
