@@ -67,11 +67,10 @@ const Header = () => {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
-              class="text-light"
+              // class="text-light"
             >
               <i
-                class="fa-regular fa-heart text-light"
-                style={{ fontSize: 30, cursor: "pointer" }}
+                class="fa-regular fa-heart heart-badge"
               ></i>
             </Badge>
           </Container>
@@ -87,7 +86,6 @@ const Header = () => {
             {getData.length ? (
               <div
                 className="card_details"
-                style={{ width: "24rem", padding: 10 }}
               >
                 <Table>
                   <thead>
@@ -103,13 +101,7 @@ const Header = () => {
                           <i
                             className="fas fa-close smallclose"
                             onClick={handleClose}
-                            style={{
-                              position: "absolute",
-                              top: 2,
-                              right: 20,
-                              fontSize: 20,
-                              cursor: "pointer",
-                            }}
+
                           ></i>
                           <tr>
                             <td>
@@ -119,7 +111,7 @@ const Header = () => {
                               >
                                 <img
                                   src={e.addimg}
-                                  style={{ width: "5rem", height: "5rem" }}
+                                  className="shortlistimg"                                  
                                   alt="House"
                                 />
                               </NavLink>
@@ -130,17 +122,11 @@ const Header = () => {
                               <p>Rooms: {e.type}</p>
                             </td>
                             <td
-                              className="mt-5 "
-                              style={{
-                                color: "red",
-                                fontSize: 20,
-                                cursor: "pointer",
-                              }}
+                              className="trash"
                               onClick={() => del(e.id)}
                             >
                               <p>
-                                {" "}
-                                <i className="fas fa-trash largetrash"></i>{" "}
+                                <i className="fas fa-trash largetrash"></i>
                               </p>
                             </td>
                           </tr>
@@ -152,23 +138,11 @@ const Header = () => {
               </div>
             ) : (
               <div
-                className="card_details d-flex justify-content-center align-item-center"
-                style={{
-                  width: "22rem",
-                  position: "Relative",
-                  padding: "10px",
-                }}
+                className="card_details"
               >
                 <i
                   className="fas fa-close smallclose"
                   onClick={handleClose}
-                  style={{
-                    position: "absolute",
-                    top: 2,
-                    right: 20,
-                    fontSize: 20,
-                    cursor: "pointer",
-                  }}
                 ></i>
                 <p>No shortlisted Items</p>
               </div>
