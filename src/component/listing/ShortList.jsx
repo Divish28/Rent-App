@@ -36,7 +36,7 @@ const ShortList = () => {
               return (
                 <>
                   <div className="items_img">
-                    <img src={elem.addimg} alt="shortlist-image"/>
+                    <img src={elem.addimg} alt="shortlist"/>
                   </div>
 
                   <div className="details">
