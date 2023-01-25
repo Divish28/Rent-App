@@ -135,22 +135,12 @@ body{
   }
   
   @media (max-width:450px){
-      .smalltrash{
-          display: block;
-          color: rgb(255, 0, 0);
-      }
       .largetrash{
           display:none;
+          color: black;
       }
       .smallclose{
           display: none;
-      }
-  
-      /* individual iteams details */
-     
-      .items_img img{
-          width: 16rem;
-          margin-left: 40px;
       }
       
   }
