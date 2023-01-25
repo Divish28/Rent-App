@@ -82,7 +82,7 @@ const Cards = () => {
                       <Button
                         onClick={() => send(element)}
                         variant="primary"
-                        className="col-lg-12"
+                        className="shortlist-button"
                       >
                         Shortlist
                       </Button>
@@ -118,7 +118,7 @@ const Cards = () => {
                       <Button
                         onClick={() =>navigate('/Login')}
                         variant="primary"
-                        className="col-lg-12"
+                        className="shortlist-button"
                       >
                         Shortlist
                       </Button>
@@ -157,7 +157,7 @@ const Cards = () => {
                       <Button
                         onClick={() => send(element)}
                         variant="primary"
-                        className="col-lg-12"
+                        className="shortlist-button "
                       >
                         Shortlist
                       </Button>
@@ -193,7 +193,7 @@ const Cards = () => {
                       <Button
                         onClick={() =>navigate('/Login')}
                         variant="primary"
-                        className="col-lg-12"
+                        className="shortlist-button"
                       >
                         Shortlist
                       </Button>

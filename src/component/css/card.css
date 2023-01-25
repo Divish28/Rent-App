@@ -50,6 +50,8 @@ body{
     padding: 10px;
 }
 
+
+/* Listing Page */
 .card_style{
     width: 22rem;
     border: solid 1 px;
@@ -58,10 +60,9 @@ body{
     margin-top: 100px;
     margin-bottom: 50px;
     background-color: rgb(180, 220, 220);
-
 }
 
-.Search-form{
+.Search-form{ 
     display: table;
     margin: auto;
 }
@@ -70,27 +71,24 @@ body{
     display:flexbox;
 }
 
-
 .search-bar{
     border:solid 1px;
     display: inline-block;
     margin: 20px;   
     width: 25rem;
-    height: 40px;
-    
+    height: 40px; 
 }
-
 
 .cardimg{
     height: 16rem;
 }
 
-.shortlistbutton{
-    margin-bottom: 15px;
+.shortlist-button{
     display: table;
     margin: auto;
-    width:9rem;
     margin-bottom: 10px;
+    background-color: rgb(71, 106, 171);
+    width: 15rem;
 }
   .smalltrash{
       display: none;
