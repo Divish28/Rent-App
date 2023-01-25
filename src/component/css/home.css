@@ -6,10 +6,13 @@ h4{
     font-size: xx-large;
 }
 img.homeimg{
+
     position: absolute;
     opacity: 60%;
-    height: 950px;
-    width:1830px;
+    width: fit-content;
+    height: fit-content;
+    height: 947px;
+    width:1845px;
     z-index: -1;
     top: 0;
 }

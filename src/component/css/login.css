@@ -43,17 +43,12 @@ button #Login-submit{
     margin: auto;
     margin-top: 10px;
     border: solid 1px;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 7rem;
     height: 2rem;
     background-color:rgb(196, 217, 234) ;
     font-family: 'Times New Roman', Times, serif;
     font-size: larger;
-    /* display: table ;
-    margin: auto;
-    margin-top: 20px;
-    border: solid .1px;
-    border-radius: 5px; */
 }
 #login-submit-button:hover{
     background-color:aliceblue ;

@@ -6,7 +6,7 @@ import Login from './component/user/Login';
 import Signup from './component/user/Signup';
 import Home from './component/layout/Home';
 import ShortList from './component/listing/ShortList';
-import Invalid from './component/Invalid';
+import Invalid from './component/user/Invalid';
 import Details from './component/listing/Details';
 
 function App() {
