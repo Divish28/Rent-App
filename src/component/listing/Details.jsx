@@ -34,7 +34,7 @@ const Details = () => {
               return (
                 <>
                   <div className="items_img">
-                    <img src={elem.addimg} alt="" style={{height:"30rem"}}/>
+                    <img src={elem.addimg} alt="detail-image"/>
                   </div>
 
                   <div className="details">
