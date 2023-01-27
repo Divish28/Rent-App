@@ -174,6 +174,7 @@ const Cards = () => {
                       >
                         Shortlist
                       </Button>
+                      <ToastContainer/>
                     </div>
                   </Card>
                 </>
