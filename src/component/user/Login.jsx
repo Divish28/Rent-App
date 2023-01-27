@@ -3,11 +3,27 @@ import React, { useEffect, useState } from "react";
 import {  NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 import "../css/login.css";
+import {eye} from 'react-icons-kit/fa/eye'
+import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
+import Icon from "react-icons-kit";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");  const navigate = useNavigate();
+  const [type,setType]=useState("password")
+  const [icon,setIcon]=useState(eyeSlash)
   const auth = useAuth();
+
+  const handleToggle=()=>{
+    if(type==="password"){
+      setIcon(eye);
+      setType("text")
+    }
+    else{
+      setIcon(eyeSlash);
+      setType("password");
+    }
+  }
 
   useEffect(() => {
     sessionStorage.clear();
@@ -74,9 +90,10 @@ const Login = () => {
           id="Login-password-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="password"
+          type={type}
           placeholder="Password"
         />
+        <span onClick={handleToggle}><Icon icon={icon} /></span>
         <input id="login-submit-button" type={"submit"} value="Submit" />
       </form>
       <div className="New-user">

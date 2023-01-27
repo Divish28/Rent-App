@@ -40,6 +40,10 @@ const Cards = () => {
     }
   };
 
+  const handleSumbit = (e) =>{
+    e.preventDefault()
+  }
+
   const dispatch = useDispatch();
   const send = (e) => {
     dispatch(ADD(e));
@@ -49,7 +53,7 @@ const Cards = () => {
   return (
     <div className="container mt-3 Listing">
       <h2 className="text-center mt-4">HOUSE LIST</h2>
-      <form className="Search-form mt-4">
+      <form onSubmit={handleSumbit} className="Search-form mt-4">
         <label className="search-label"> Filter By :</label>
         <input
           onChange={(e) => searchItems(e.target.value)}
@@ -57,7 +61,7 @@ const Cards = () => {
           type="search"
           placeholder=" City or Type or Rooms"
         />
-        {/* <input classname="search-button" type="submit" value="Submit" /> */}
+        <input classname="search-button" type="submit" value="Submit" />
       </form>
       <div className="row d-flex cardList">
         {searchInput.length > 1

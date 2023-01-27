@@ -2,12 +2,17 @@ import axios from "axios";
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../css/signup.css";
+import {eye} from 'react-icons-kit/fa/eye'
+import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
+import Icon from "react-icons-kit";
 
 const Signup = () => {
   const [userName, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [type,setType]=useState("password")
+  const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
 
   const areAllFieldsFilled =
@@ -27,6 +32,17 @@ const Signup = () => {
         alert("Not registered:" + error);
       });
   };
+
+  const handleToggle=()=>{
+    if(type==="password"){
+      setIcon(eye);
+      setType("text")
+    }
+    else{
+      setIcon(eyeSlash);
+      setType("password");
+    }
+  }
 
   return (
     <div>
@@ -64,11 +80,12 @@ const Signup = () => {
           className="signup-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="password"
+          type={type}
           required
           placeholder="Password"
           pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
         />
+        <span onClick={handleToggle}><Icon icon={icon} /></span>
         <input
           id="signup-submit"
           // hidden={areAllFieldsFilled}
