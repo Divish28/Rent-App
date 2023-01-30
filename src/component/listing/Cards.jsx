@@ -25,6 +25,17 @@ const Cards = () => {
     });
 };
 
+const showToastErrorMessage = () => {
+  toast.error('Login to view details', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+const showToastShortlistMessage = () => {
+  toast.error('Login to Shortlist the House', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchInput !== "") {
@@ -107,14 +118,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Login`)}
+                      onClick={() => showToastErrorMessage()}
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Login`)}
+                      onClick={() => showToastErrorMessage()}
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -131,7 +142,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() =>navigate('/Login')}
+                        onClick={() =>showToastShortlistMessage()}
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -184,14 +195,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Login`)}
+                      onClick={() => showToastErrorMessage()}
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Login`)}
+                      onClick={() => showToastErrorMessage()}
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -208,7 +219,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() =>navigate('/Login')}
+                        onClick={() =>showToastShortlistMessage()}
                         variant="primary"
                         className="shortlist-button"
                       >
