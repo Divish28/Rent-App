@@ -11,3 +11,10 @@ export const DLT=(id)=>{
         payload:id
     }
 }
+
+export const DISP = (id)=>{
+    return{
+        type:"DISPLAY_SHORTLIST",
+        payload:id
+    }
+}

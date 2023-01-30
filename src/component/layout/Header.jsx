@@ -11,10 +11,17 @@ import { useState } from "react";
 import { Table } from "@mui/material";
 import { DLT } from "../../redux/action/action";
 import "../css/card.css";
+import { toast } from "react-toastify"; 
 
 const Header = () => {
 
   const auth = sessionStorage.getItem("email");
+
+  const showToastRemoveMessage = () => {
+    toast.error('Item Removed', {
+        position: toast.POSITION.TOP_CENTER
+    });
+  };
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -29,6 +36,7 @@ const Header = () => {
 
   const del = (id) => {
     dispatch(DLT(id));
+    showToastRemoveMessage();
   };
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists);
