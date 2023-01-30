@@ -131,8 +131,6 @@ body{
       flex: .5;
   };
 
-
-
   @media (max-width:772px){
       .iteamsdetails{
           flex-direction: column;

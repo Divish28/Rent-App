@@ -63,6 +63,7 @@ const Signup = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
+          title="Enter Correct Email formate"
           required
           placeholder="E-mail"
         />
@@ -81,6 +82,8 @@ const Signup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type={type}
+          title="Password should contain atleast 8 Characters,
+                 1 Uppercase, 1 Lowwercase 1 Special Character"
           required
           placeholder="Password"
           pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"

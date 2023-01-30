@@ -21,9 +21,10 @@ label{
 }
 
 input.signup-input{
-    height: 2rem;
-    width:16rem;
-    border: solid .01px;
+    height: 2.5rem;
+    width:17rem;
+    border: none ;
+    border-radius: 10px;
     display: inline-block;
     margin: 30px;
     font-family:'Times New Roman', Times, serif;
@@ -52,6 +53,7 @@ input.signup-input{
 
 
 .Existing-user{
+    margin-top: 1rem;
     text-align: center ;
 }
 /* input:valid{

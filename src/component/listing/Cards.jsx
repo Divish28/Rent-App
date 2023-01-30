@@ -61,7 +61,7 @@ const Cards = () => {
           type="search"
           placeholder=" City or Type or Rooms"
         />
-        <input classname="search-button" type="submit" value="Submit" />
+        {/* <input classname="search-button" type="submit" value="Submit" /> */}
       </form>
       <div className="row d-flex cardList">
         {searchInput.length > 1
@@ -100,7 +100,6 @@ const Cards = () => {
                       >
                         Shortlist
                       </Button>
-                      <ToastContainer/>
                     </div>
                   </Card>
                 </>
@@ -108,14 +107,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Login`)}
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Login`)}
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -178,7 +177,6 @@ const Cards = () => {
                       >
                         Shortlist
                       </Button>
-                      <ToastContainer/>
                     </div>
                   </Card>
                 </>
@@ -186,14 +184,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Login`)}
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Login`)}
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -222,6 +220,7 @@ const Cards = () => {
               );
             })}
       </div>
+      <ToastContainer/>
     </div>
   );
 };

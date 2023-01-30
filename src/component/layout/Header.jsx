@@ -40,12 +40,12 @@ const Header = () => {
           <Container className="nav-container">
             <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
-              <NavLink
+              {/* <NavLink
                 to="/Home"
                 className={"text-decoration-none text-light mx-3"}
               >
                 Home
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/Listing"
                 className={"text-decoration-none text-light mx-3"}
@@ -148,16 +148,16 @@ const Header = () => {
             <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
               <NavLink
-                to="/Home"
-                className={"text-decoration-none text-light mx-3"}
-              >
-                Home
-              </NavLink>
-              <NavLink
                 to="/Listing"
                 className={"text-decoration-none text-light mx-3"}
               >
                 House List
+              </NavLink>
+              <NavLink
+                to="/Signup"
+                className={"text-decoration-none text-light mx-3"}
+              >
+                Register
               </NavLink>
               <NavLink
                 to="/Login"

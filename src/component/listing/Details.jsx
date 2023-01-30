@@ -86,7 +86,7 @@ const Details = () => {
                       </tr>
                       <tr>
                       <td>
-                         <button onClick={()=>navigate(-1)}>GO BACK</button>
+                         <button id="goBack" onClick={()=>navigate(-1)}>GO BACK</button>
                         </td>
                       </tr>
                     </Table>

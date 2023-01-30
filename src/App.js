@@ -9,12 +9,12 @@ import ShortList from './component/listing/ShortList';
 import Invalid from './component/user/Invalid';
 import Details from './component/listing/Details';
 
-function App() {
+const App =()=> {
   return (
     <div>
       <Header/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path="/Home" element={<Home/>}/>
         <Route path="/Listing" element={<Cards/>}/>
         <Route path="/Login" element={<Login/>}/>
