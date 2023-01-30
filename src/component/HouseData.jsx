@@ -101,7 +101,7 @@ const HouseData=[
         category: "Apartment",
         type: "2BHK",
         addimg: "https://i.pinimg.com/originals/f8/5b/09/f85b09ee26889bbeb8d65e4fe52d7cd7.jpg",
-        number:"8823053765",
+        number:"9853943728",
         rent:15000,
         furnished:"Semi-Furnished",
         name:"Amar",
@@ -113,10 +113,10 @@ const HouseData=[
         category: "Apartment",
         type: "2BHK",
         addimg: "https://cf.bstatic.com/xdata/images/xphoto/max1440/48388353.jpg?k=f796d0756e9faeaeb25752e8eef770530ef8714cf908be5e533eec1ffd2b376b&o=",
-        number:"8823053765",
-        rent:15000,
+        number:"8055630565",
+        rent:22000,
         furnished:"Semi-Furnished",
-        name:"Amar",
+        name:"Ram",
         description:`This spacious two bedroom flat is the perfect choice for families This East facing home is on the 1st floor & is over 1290 sqft. You get dedicated space for car and bike parking.`
       },
       {
@@ -125,10 +125,10 @@ const HouseData=[
         category: "Apartment",
         type: "3BHK",
         addimg: "https://www.nobroker.in/blog/wp-content/uploads/2021/11/Puneeth-Rajkumar-House-1.jpg",
-        number:"8823053765",
-        rent:15000,
+        number:"9823753735",
+        rent:20000,
         furnished:"Semi-Furnished",
-        name:"Amar",
+        name:"Eshwar",
         description:`This spacious two bedroom flat is the perfect choice for families This East facing home is on the 1st floor & is over 1290 sqft. You get dedicated space for car and bike parking.`
       },
       {
@@ -137,10 +137,10 @@ const HouseData=[
         category: "Individual",
         type: "2BHK",
         addimg: "https://www.shutterstock.com/image-illustration/3d-illustration-newly-built-luxury-260nw-2066281016.jpg",
-        number:"8823053765",
-        rent:15000,
+        number:"8185230365",
+        rent:25000,
         furnished:"Semi-Furnished",
-        name:"Amar",
+        name:"Malik",
         description:`This spacious two bedroom flat is the perfect choice for families This East facing home is on the 1st floor & is over 1290 sqft. You get dedicated space for car and bike parking.`
       }
 ]
