@@ -1,9 +1,10 @@
 import React from 'react'
+import '../css/url.css'
 
-function Invalid() {
+const Invalid=()=>{
   return (
-    <div>
-        <h2>URL ENTERED IS NOT VALID</h2>
+    <div className='invalidMessage'>
+        <h1>404 NOT FOUND</h1>
     </div>
   )
 }
