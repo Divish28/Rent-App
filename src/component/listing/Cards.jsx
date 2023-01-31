@@ -65,9 +65,10 @@ const showToastAlreadyShortlistMessage = () => {
   }
 
   const dispatch = useDispatch();
+
   const send = (e) => {
     dispatch(ADD(e));
-    showToastMessage();
+    showToastMessage()
   };
 
   return (

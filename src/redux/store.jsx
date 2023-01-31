@@ -4,14 +4,14 @@ import rooted from "./reducer/main";
 const saveToLocalStorage=(state)=> {
     try {
       const storededState = JSON.stringify(state);
-      localStorage.setItem("State", storededState);
+      sessionStorage.setItem("State", storededState);
     } catch (e) {
       console.warn(e);
     }
   }
   const loadFromLocalStorage=()=> {
     try {
-      const storededState = localStorage.getItem("State");
+      const storededState = sessionStorage.getItem("State");
       if (storededState === null){
       return undefined;
     }
