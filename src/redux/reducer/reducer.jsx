@@ -16,11 +16,6 @@ export const shortlistReducer = (state = INIT_STATE, action) => {
                 ...state,
                 Shortlists:data
             }    
-        case "DISPLAY_SHORTLIST":
-            const disp = state.Shortlists
-            return{
-                ...state
-            }
         default:
             return state
     }

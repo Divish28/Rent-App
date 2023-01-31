@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import '../css/card.css'
 import { toast, ToastContainer } from "react-toastify";
-import { DISP, DLT } from "../../redux/action/action";
+import { DLT } from "../../redux/action/action";
 import { useDispatch } from "react-redux";
 
 const ShortList = () => {
@@ -26,10 +26,6 @@ const ShortList = () => {
     dispatch(DLT(id));
     showToastRemoveMessage();
   };
-
-  const disp = (id)=>{
-    dispatch(DISP(id));
-  }
 
   const getData = useSelector((state) => state.shortlistReducer.Shortlists);
 
