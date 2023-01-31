@@ -37,6 +37,12 @@ const showToastShortlistMessage = () => {
   });
 };
 
+const showToastAlreadyShortlistMessage = () => {
+  toast.error('Already Shortlisted', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
 
 
   const searchItems = (searchValue) => {
