@@ -42,7 +42,7 @@ const Details = () => {
                     <tr>
                         <td>
                           <p>
-                            <strong>City: </strong> {elem.city}
+                            <strong>City</strong> : {elem.city}
                           </p>
                         </td>
                       </tr>
