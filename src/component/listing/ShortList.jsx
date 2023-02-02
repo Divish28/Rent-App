@@ -27,10 +27,10 @@ const ShortList = () => {
     showToastRemoveMessage();
   };
 
-  const getData = useSelector((state) => state.shortlistReducer.Shortlists);
+  const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
   const compare = () => {
-    let comparedata = getData.filter((e) => {
+    let comparedata = shortlistedData.filter((e) => {
       return e.id == id;
     });
     setList(comparedata);
@@ -42,7 +42,7 @@ const ShortList = () => {
 
   return (
     <>
-    {getData.length?(
+    {shortlistedData.length?(
       <div className="container mt-5 shortlist">
         <h2 className="text-center">SHORTLISTED HOUSE DETAILS</h2>
 
