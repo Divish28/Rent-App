@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {  NavLink, useNavigate } from "react-router-dom";
-// import { useAuth } from "../auth";
 import "../css/login.css";
 import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
@@ -12,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");  const navigate = useNavigate();
   const [type,setType]=useState("password")
   const [icon,setIcon]=useState(eyeSlash)
-  // const auth = useAuth();
 
   const handleToggle=()=>{
     if(type==="password"){

@@ -29,7 +29,7 @@ const Details = () => {
         <h2 className="text-center">DETAILS</h2>
 
         <section className="container mt-5">
-          <div className="iteamsdetails">
+          <div className="iteamsdetails-detail">
             {list.map((elem) => {
               return (
                 <>

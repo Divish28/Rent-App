@@ -19,6 +19,7 @@ const Cards = () => {
 
   const auth = sessionStorage.getItem("email");
 
+
   const showToastMessage = () => {
     toast.success('Shortlisted !', {
         position: toast.POSITION.TOP_CENTER
@@ -36,14 +37,6 @@ const showToastShortlistMessage = () => {
       position: toast.POSITION.TOP_CENTER
   });
 };
-
-const showToastAlreadyShortlistMessage = () => {
-  toast.error('Already Shortlisted', {
-      position: toast.POSITION.TOP_CENTER
-  });
-};
-
-
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);

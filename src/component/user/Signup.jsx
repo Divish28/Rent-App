@@ -87,8 +87,7 @@ const Signup = () => {
           required
           placeholder="Password"
           pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-        />
-        <span onClick={handleToggle}><Icon icon={icon} /></span>
+        /><span onClick={handleToggle}><Icon icon={icon} /></span>
         <input
           id="signup-submit"
           // hidden={areAllFieldsFilled}
