@@ -7,20 +7,24 @@ import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 
 const Signup = () => {
-  const [userName, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [password, setPassword] = useState("");
+  const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:"",password:""}])
+  const handleChange = (event) => {
+    setUser({...user,[event.target.value]:event.target.value})
+  }
+  // const [userName, setUsername] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [mobileNumber, setMobileNumber] = useState("");
+  // const [password, setPassword] = useState("");
   const [type,setType]=useState("password")
   const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
 
-  const areAllFieldsFilled =
-    userName === "" || email === "" || mobileNumber === "" || password === "";
+  const areAllFieldsFilled = user===""
+    // userName === "" || email === "" || mobileNumber === "" || password === "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let registerData = { userName, email, mobileNumber, password };
+    let registerData = { user };
     console.log(registerData);
     axios
       .post("http://localhost:8000/user", registerData)
@@ -51,8 +55,8 @@ const Signup = () => {
         <label>Username:</label>
         <input
           className="signup-input"
-          value={userName}
-          onChange={(e) => setUsername(e.target.value)}
+          // value={user}
+          onChange={handleChange}
           type="text"
           required
           placeholder="User Name"
@@ -60,8 +64,8 @@ const Signup = () => {
         <label>E-mail:</label>
         <input
           className="signup-input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          // value={user.}
+          onChange={handleChange}
           type="email"
           title="Enter Correct Email formate"
           required
@@ -70,8 +74,8 @@ const Signup = () => {
         <label>Mobile :</label>
         <input
           className="signup-input"
-          value={mobileNumber}
-          onChange={(e) => setMobileNumber(e.target.value)}
+          // value={user}
+          onChange={handleChange}
           required
           type="text"
           placeholder="Mobile Number"
@@ -79,8 +83,8 @@ const Signup = () => {
         <label>Password:</label>
         <input
           className="signup-input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          // value={user}
+          onChange={handleChange}
           type={type}
           title="Password should contain atleast 8 Characters,
                  1 Uppercase, 1 Lowwercase 1 Special Character"
