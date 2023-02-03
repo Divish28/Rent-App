@@ -7,7 +7,7 @@ import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 
 const Signup = () => {
-  const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:"",password:""}])
+  const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:""}])
   const handleChange = (event) => {
     setUser({...user,[event.target.value]:event.target.value})
   }
@@ -52,38 +52,42 @@ const Signup = () => {
     <div>
       <h1 className="Signup-Heading">Signup</h1>
       <form className="Signup-form" onSubmit={handleSubmit}>
-        <label>Username:</label>
+        <label htmlFor="userName">Username:</label>
         <input
           className="signup-input"
+          name="userName"
           // value={user}
           onChange={handleChange}
           type="text"
           required
           placeholder="User Name"
         />
-        <label>E-mail:</label>
+        <label htmlFor="email">E-mail:</label>
         <input
           className="signup-input"
           // value={user.}
+          name="email"
           onChange={handleChange}
           type="email"
           title="Enter Correct Email formate"
           required
           placeholder="E-mail"
         />
-        <label>Mobile :</label>
+        <label htmlFor="mobileNumber">Mobile :</label>
         <input
           className="signup-input"
           // value={user}
+          name="mobileNumber"
           onChange={handleChange}
           required
           type="text"
           placeholder="Mobile Number"
         />
-        <label>Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           className="signup-input"
           // value={user}
+          name="password"
           onChange={handleChange}
           type={type}
           title="Password should contain atleast 8 Characters,
