@@ -27,13 +27,13 @@ const Cards = () => {
 };
 
 const showToastErrorMessage = () => {
-  toast.error(`Login to view details`, {
+  toast.warning(`Login to view details`, {
       position: toast.POSITION.TOP_CENTER
   });
 };
 
 const showToastShortlistMessage = () => {
-  toast.error('Login to Shortlist the House', {
+  toast.warning('Login to Shortlist the House', {
       position: toast.POSITION.TOP_CENTER
   });
 };

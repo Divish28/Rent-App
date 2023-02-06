@@ -9,7 +9,7 @@ import Icon from "react-icons-kit";
 const Signup = () => {
   const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:""}])
   const handleChange = (event) => {
-    setUser({...user,[event.target.value]:event.target.value})
+    setUser({userName:event.target.value})
   }
   // const [userName, setUsername] = useState("");
   // const [email, setEmail] = useState("");
@@ -24,6 +24,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("user created".user)
     let registerData = { user };
     console.log(registerData);
     axios
