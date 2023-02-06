@@ -9,7 +9,7 @@ import Icon from "react-icons-kit";
 const Signup = () => {
   const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:""}])
   const handleChange = (event) => {
-    setUser({userName:event.target.value})
+    setUser({...user,user:event.target.value})
   }
   // const [userName, setUsername] = useState("");
   // const [email, setEmail] = useState("");

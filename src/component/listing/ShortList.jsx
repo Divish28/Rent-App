@@ -30,11 +30,16 @@ const ShortList = () => {
   const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
   const compare = () => {
-    let comparedata = shortlistedData.filter((e) => {
-      return e.id == id;
-    });
+    let comparedata = shortlistedData
     setList(comparedata);
   };
+
+  // const compare = () => {
+  //   let comparedata = shortlistedData.filter((e) => {
+  //     return e.id == id;
+  //   });
+  //   setList(comparedata);
+  // };
 
   useEffect(() => {
     compare();
@@ -47,7 +52,7 @@ const ShortList = () => {
         <h2 className="text-center">SHORTLISTED HOUSE DETAILS</h2>
 
         <section className="container mt-5">
-          <div className="iteamsdetails">
+          <div className="row d-flex iteamsdetails">
             {list.map((elem) => {
               return (
                 <>
