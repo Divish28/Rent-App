@@ -133,7 +133,6 @@ const ShortList = () => {
         </h2>
         <button className="noItem-button" onClick={()=>{navigate(-1)}} >Go Back</button>
       </div>)}
-      <ToastContainer/>
     </>
   );
 };

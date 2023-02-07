@@ -10,15 +10,17 @@ import Invalid from './component/user/Invalid';
 import Details from './component/listing/Details';
 import ProtectedRoute from './component/user/ProtectedRoute';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const App =()=> {
   return (
     <div>
       <Header/>
+      <ToastContainer/>
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/Home" element={<Home/>}/>
-        <Route path="/Listing" element={<ProtectedRoute><Cards/></ProtectedRoute>}/>
+        <Route path="/Listing" element={<Cards/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>
         <Route path="/ShortList" element={<ProtectedRoute><ShortList/></ProtectedRoute>}/>

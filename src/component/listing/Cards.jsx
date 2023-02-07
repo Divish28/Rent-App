@@ -234,7 +234,6 @@ const showToastShortlistMessage = () => {
               );
             })}
       </div>
-      <ToastContainer/>
     </div>
   );
 };
