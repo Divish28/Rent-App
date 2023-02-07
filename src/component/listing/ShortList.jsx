@@ -52,7 +52,7 @@ const ShortList = () => {
         <h2 className="text-center">SHORTLISTED HOUSE DETAILS</h2>
 
         <section className="container mt-5">
-          <div className="row d-flex iteamsdetails">
+          <div className="row d-flex iteamsdetails-shortlist">
             {list.map((elem) => {
               return (
                 <>
