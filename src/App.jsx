@@ -11,6 +11,7 @@ import Details from './component/listing/Details';
 import ProtectedRoute from './component/user/ProtectedRoute';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App =()=> {
   return (
