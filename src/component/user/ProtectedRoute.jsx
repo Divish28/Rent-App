@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({children}) => {
-    const isLoggedin = sessionStorage.getItem("email")
+    const auth = sessionStorage.getItem("email")
     
-    if(!isLoggedin){
+    if(!auth){
         return <Navigate to="/Login"replace/>
     }
   return children
