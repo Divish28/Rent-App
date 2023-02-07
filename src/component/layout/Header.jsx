@@ -39,7 +39,7 @@ const Header = () => {
     showToastRemoveMessage();
   };
 
-  const getData = useSelector((state) => state.shortlistReducer.Shortlists);
+  const Data = useSelector((state) => state.shortlistReducer.Shortlists);
 
   return (
     <div>
@@ -68,7 +68,7 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Badge
-              badgeContent={getData.length}
+              badgeContent={Data.length}
               color="primary"
               id="basic-button"
               aria-controls={open ? "basic-menu" : undefined}
@@ -89,7 +89,7 @@ const Header = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            {getData.length ? (
+            {Data.length ? (
               <div className="card_details">
                 <Table>
                   <thead>
@@ -99,7 +99,7 @@ const Header = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {getData.map((e) => {
+                    {Data.map((e) => {
                       return (
                         <>
                           <i

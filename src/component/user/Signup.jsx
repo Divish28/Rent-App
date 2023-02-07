@@ -7,9 +7,21 @@ import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 
 const Signup = () => {
-  const [user,setUser] = useState([{userName:"",email:"",mobileNumber:"",password:""}])
+  const [user,setUser] = useState(
+      {
+        userName:"",
+        email:"",
+        mobileNumber:"",
+        password:""
+      }
+    )
   const handleChange = (event) => {
-    setUser({...user,user:event.target.value})
+    const {name,value} = event.target
+    setUser(()=> {
+      return {...user,[name]:value}
+    })
+    // setUser({...user,user:event.target.value})
+    // setUser(event.target)
   }
   // const [userName, setUsername] = useState("");
   // const [email, setEmail] = useState("");
@@ -24,7 +36,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("user created".user)
+    console.log("user created",user)
     let registerData = { user };
     console.log(registerData);
     axios
