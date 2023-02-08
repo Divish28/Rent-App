@@ -8,7 +8,8 @@ import Icon from "react-icons-kit";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");  const navigate = useNavigate();
+  const [password, setPassword] = useState("");  
+  const navigate = useNavigate();
   const [type,setType]=useState("password")
   const [icon,setIcon]=useState(eyeSlash)
 

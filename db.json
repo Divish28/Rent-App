@@ -34,6 +34,13 @@
       "mobileNumber": "9876543210",
       "password": "123ASD^%GFfg",
       "id": 5
+    },
+    {
+      "userName": "Kabi",
+      "email": "kabilan@gmail.com",
+      "mobileNumber": "9075328729",
+      "password": "HOIJsed098$%",
+      "id": 6
     }
   ]
 }

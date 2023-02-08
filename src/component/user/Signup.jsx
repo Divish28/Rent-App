@@ -16,12 +16,10 @@ const Signup = () => {
       }
     )
   const handleChange = (event) => {
-    const {name,value} = event.target
+    // const {name,value} = event.target
     setUser(()=> {
-      return {...user,[name]:value}
+      return {...user,[event.target.name]:event.target.value}
     })
-    // setUser({...user,user:event.target.value})
-    // setUser(event.target)
   }
   // const [userName, setUsername] = useState("");
   // const [email, setEmail] = useState("");
@@ -68,7 +66,6 @@ const Signup = () => {
         <input
           className="signup-input"
           name="userName"
-          // value={user}
           onChange={handleChange}
           type="text"
           required
@@ -77,7 +74,6 @@ const Signup = () => {
         <label htmlFor="email">E-mail:</label>
         <input
           className="signup-input"
-          // value={user.}
           name="email"
           onChange={handleChange}
           type="email"
@@ -88,7 +84,6 @@ const Signup = () => {
         <label htmlFor="mobileNumber">Mobile :</label>
         <input
           className="signup-input"
-          // value={user}
           name="mobileNumber"
           onChange={handleChange}
           required
@@ -98,7 +93,6 @@ const Signup = () => {
         <label htmlFor="password">Password:</label>
         <input
           className="signup-input"
-          // value={user}
           name="password"
           onChange={handleChange}
           type={type}
