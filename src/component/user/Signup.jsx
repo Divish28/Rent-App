@@ -31,13 +31,12 @@ const Signup = () => {
   const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
 
-  const areAllFieldsFilled = user===""
-    // userName === "" || email === "" || mobileNumber === "" || password === "";
+  const areAllFieldsFilled = user === ""
+  //  userName === "" || email === "" || mobileNumber === "" || password === "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("user created",user)
-    let registerData = { user };
+    let registerData = { ...user };
     console.log(registerData);
     axios
       .post("http://localhost:8000/user", registerData)
