@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {  NavLink, useNavigate } from "react-router-dom";
-import "../css/login.css";
 import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
+import "../css/login.css";
 import { showToastLoginMessage,showToastEmailError,showToastPasswordError, showToastLoginError } from "../Toast";
 
 const Login = () => {

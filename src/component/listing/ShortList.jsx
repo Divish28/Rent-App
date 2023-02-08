@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Table from "react-bootstrap/Table";
+import { useDispatch,useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import Table from "react-bootstrap/Table";
 import '../css/card.css'
 import { DLT } from "../../redux/action/action";
-import { useDispatch } from "react-redux";
 import { showToastRemoveMessage } from "../Toast";
 
 const ShortList = () => {
 
   const [list, setList] = useState([]);
-  
   const navigate = useNavigate()
-
   const { id } = useParams();
-
-
   const dispatch = useDispatch();
+
+  const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
   const del = (id) => {
     dispatch(DLT(id));
     showToastRemoveMessage();
   };
-
-  const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
   const compare = () => {
     let comparedata = shortlistedData

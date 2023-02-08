@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../css/signup.css";
 import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
+import "../css/signup.css";
 
 const Signup = () => {
+  
   const [user,setUser] = useState(
       {
         userName:"",

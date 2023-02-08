@@ -1,16 +1,16 @@
-import Badge from "@mui/material/Badge";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Menu from "@mui/material/Menu";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import Badge from "@mui/material/Badge";
+import Menu from "@mui/material/Menu";
 import { Table } from "@mui/material";
-import { DLT } from "../../redux/action/action";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import "../css/card.css";
+import { DLT } from "../../redux/action/action";
 import { showToastRemoveMessage,showToastLogoutMessage } from "../Toast";
 
 const Header = () => {
@@ -33,7 +33,7 @@ const Header = () => {
     showToastRemoveMessage();
   };
 
-  const Data = useSelector((state) => state.shortlistReducer.Shortlists);
+  const shortlistedHouse = useSelector((state) => state.shortlistReducer.Shortlists);
 
   return (
     <div>
@@ -57,12 +57,12 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Badge
-              badgeContent={Data.length}
+              badgeContent={shortlistedHouse.length}
               color="primary"
               id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
+              aria-controls={open ? "basic-menu" : null}
               aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              aria-expanded={open ? "true" : null}
               onClick={handleClick}
               // class="text-light"
             >
@@ -78,7 +78,7 @@ const Header = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            {Data.length ? (
+            {shortlistedHouse.length ? (
               <div className="card_details">
                 <Table>
                   <thead>
@@ -88,7 +88,7 @@ const Header = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {Data.map((e) => {
+                    {shortlistedHouse.map((e) => {
                       return (
                         <>
                           <i

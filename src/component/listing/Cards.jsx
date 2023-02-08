@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useDispatch } from "react-redux";
+import "../css/card.css";
 import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
-import "../css/card.css";
-import { useNavigate } from "react-router-dom";
 import { showToastMessage, showToastErrorMessage, showToastShortlistMessage } from "../Toast";
 
 const Cards = () => {
@@ -17,25 +17,6 @@ const Cards = () => {
   const [list, setList] = useState(HouseData);
 
   const auth = sessionStorage.getItem("email");
-
-
-//   const showToastMessage = () => {
-//     toast.success('Shortlisted !', {
-//         position: toast.POSITION.TOP_CENTER
-//     });
-// };
-
-// const showToastErrorMessage = () => {
-//   toast.warning(`Login to view details`, {
-//       position: toast.POSITION.TOP_CENTER
-//   });
-// };
-
-// const showToastShortlistMessage = () => {
-//   toast.warning('Login to Shortlist the House', {
-//       position: toast.POSITION.TOP_CENTER
-//   });
-// };
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);

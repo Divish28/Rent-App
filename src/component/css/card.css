@@ -144,8 +144,8 @@ body{
       display: table;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.082);
-      background-color: rgb(180, 220, 220);
+      /* box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.082);
+      background-color: rgb(180, 220, 220); */
   }
   .iteamsdetails-detail{
     max-width: 8000px;
