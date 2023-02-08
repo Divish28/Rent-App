@@ -29,8 +29,7 @@ const Signup = () => {
   const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
 
-  const areAllFieldsFilled = user === ""
-  //  userName === "" || email === "" || mobileNumber === "" || password === "";
+  const areAllFieldsFilled = user.userName === "" || user.email===""||user.mobileNumber===""||user.password===""
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,6 +64,7 @@ const Signup = () => {
         <label htmlFor="userName">Username:</label>
         <input
           className="signup-input"
+          value={user.userName}
           name="userName"
           onChange={handleChange}
           type="text"
@@ -75,6 +75,7 @@ const Signup = () => {
         <input
           className="signup-input"
           name="email"
+          value={user.email}
           onChange={handleChange}
           type="email"
           title="Enter Correct Email formate"
@@ -85,6 +86,7 @@ const Signup = () => {
         <input
           className="signup-input"
           name="mobileNumber"
+          value={user.mobileNumber}
           onChange={handleChange}
           required
           type="text"
@@ -94,6 +96,7 @@ const Signup = () => {
         <input
           className="signup-input"
           name="password"
+          value={user.password}
           onChange={handleChange}
           type={type}
           title="Password should contain atleast 8 Characters,

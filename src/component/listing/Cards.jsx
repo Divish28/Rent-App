@@ -6,8 +6,7 @@ import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
 import "../css/card.css";
 import { useNavigate } from "react-router-dom";
-import { toast,ToastContainer } from "react-toastify";
-// import 'react-toastify/dist/ReactToastify.css';
+import { showToastMessage, showToastErrorMessage, showToastShortlistMessage } from "../Toast";
 
 const Cards = () => {
   
@@ -20,23 +19,23 @@ const Cards = () => {
   const auth = sessionStorage.getItem("email");
 
 
-  const showToastMessage = () => {
-    toast.success('Shortlisted !', {
-        position: toast.POSITION.TOP_CENTER
-    });
-};
+//   const showToastMessage = () => {
+//     toast.success('Shortlisted !', {
+//         position: toast.POSITION.TOP_CENTER
+//     });
+// };
 
-const showToastErrorMessage = () => {
-  toast.warning(`Login to view details`, {
-      position: toast.POSITION.TOP_CENTER
-  });
-};
+// const showToastErrorMessage = () => {
+//   toast.warning(`Login to view details`, {
+//       position: toast.POSITION.TOP_CENTER
+//   });
+// };
 
-const showToastShortlistMessage = () => {
-  toast.warning('Login to Shortlist the House', {
-      position: toast.POSITION.TOP_CENTER
-  });
-};
+// const showToastShortlistMessage = () => {
+//   toast.warning('Login to Shortlist the House', {
+//       position: toast.POSITION.TOP_CENTER
+//   });
+// };
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
@@ -121,14 +120,14 @@ const showToastShortlistMessage = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => showToastErrorMessage()}
+                      onClick={showToastErrorMessage}
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => showToastErrorMessage()}
+                      onClick={ showToastErrorMessage}
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -145,7 +144,7 @@ const showToastShortlistMessage = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() =>showToastShortlistMessage()}
+                        onClick={showToastShortlistMessage}
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -198,14 +197,14 @@ const showToastShortlistMessage = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => showToastErrorMessage()}
+                      onClick={ showToastErrorMessage }
                       variant="top"
                       src={element.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => showToastErrorMessage()}
+                      onClick={ showToastErrorMessage }
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -222,7 +221,7 @@ const showToastShortlistMessage = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() =>showToastShortlistMessage()}
+                        onClick={showToastShortlistMessage}
                         variant="primary"
                         className="shortlist-button"
                       >

@@ -3,9 +3,9 @@ import Table from "react-bootstrap/Table";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import '../css/card.css'
-import { toast, ToastContainer } from "react-toastify";
 import { DLT } from "../../redux/action/action";
 import { useDispatch } from "react-redux";
+import { showToastRemoveMessage } from "../Toast";
 
 const ShortList = () => {
 
@@ -15,11 +15,7 @@ const ShortList = () => {
 
   const { id } = useParams();
 
-  const showToastRemoveMessage = () => {
-    toast.error('Item Removed', {
-        position: toast.POSITION.TOP_CENTER
-    });
-  };
+
   const dispatch = useDispatch();
 
   const del = (id) => {

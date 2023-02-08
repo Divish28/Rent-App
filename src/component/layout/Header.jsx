@@ -11,17 +11,11 @@ import { useState } from "react";
 import { Table } from "@mui/material";
 import { DLT } from "../../redux/action/action";
 import "../css/card.css";
-import { toast } from "react-toastify"; 
+import { showToastRemoveMessage,showToastLogoutMessage } from "../Toast";
 
 const Header = () => {
 
   const auth = sessionStorage.getItem("email");
-
-  const showToastRemoveMessage = () => {
-    toast.error('Item Removed', {
-        position: toast.POSITION.TOP_CENTER
-    });
-  };
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -48,12 +42,6 @@ const Header = () => {
           <Container className="nav-container">
             <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
             <Nav className="me-auto">
-              {/* <NavLink
-                to="/Home"
-                className={"text-decoration-none text-light mx-3"}
-              >
-                Home
-              </NavLink> */}
               <NavLink
                 to="/Listing"
                 className={"text-decoration-none text-light mx-3"}
@@ -62,6 +50,7 @@ const Header = () => {
               </NavLink>
               <NavLink
                 to="/Login"
+                onClick={showToastLogoutMessage}
                 className={"text-decoration-none text-light mx-3"}
               >
                 Logout

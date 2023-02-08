@@ -5,8 +5,10 @@ import "../css/login.css";
 import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
+import { showToastLoginMessage,showToastEmailError,showToastPasswordError, showToastLoginError } from "../Toast";
 
 const Login = () => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");  
   const navigate = useNavigate();
@@ -52,19 +54,19 @@ const Login = () => {
         })
         .then((resp) => {
           if (Object.keys(resp).length === 0) {
-            alert("Enter Correct Email");
+            showToastEmailError()
           } else {
             if (resp[0].password === password) {
-              alert("Login Success");
+              showToastLoginMessage()
               sessionStorage.setItem("email", email);
               navigate("/Listing");
             } else {
-              alert("Enter Correct Password");
+              showToastPasswordError()
             }
           }
         })
         .catch((err) => {
-          alert("Login Failed:" + err.message);
+          showToastLoginError(err)
         });
     }
   };

@@ -1,26 +1,55 @@
-import React from 'react'
-import {toast,ToastContainer} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify'
 
-const showToastMessage = () => {
+export const showToastMessage = () => {
     toast.success('Shortlisted !', {
         position: toast.POSITION.TOP_CENTER
     });
 };
 
-const showToastErrorMessage = () => {
-  toast.error(`Login to view details`, {
+export const showToastRemoveMessage = () => {
+  toast.error('Item Removed', {
       position: toast.POSITION.TOP_CENTER
   });
 };
 
-const showToastShortlistMessage = () => {
-  toast.error('Login to Shortlist the House', {
+export const showToastErrorMessage = () => {
+  toast.warning(`Login to view details`, {
       position: toast.POSITION.TOP_CENTER
   });
 };
-const Toast = () => {
 
-}
+export const showToastShortlistMessage = () => {
+  toast.warning('Login to Shortlist the House', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
 
-export default Toast
+export const showToastLoginMessage = () => {
+  toast.success('Logged in', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
+export const showToastLogoutMessage = () => {
+  toast.success('Logged out', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
+export const showToastEmailError = () => {
+  toast.error('Enter Correct Email-ID', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
+export const showToastPasswordError = () => {
+  toast.error('Enter Correct Password', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
+export const showToastLoginError = (error) => {
+  toast.error(error.message, {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
