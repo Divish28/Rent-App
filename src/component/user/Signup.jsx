@@ -5,6 +5,7 @@ import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 import "../css/signup.css";
+import { showToastRegisterMessage } from "../Toast";
 
 const Signup = () => {
   
@@ -28,11 +29,11 @@ const Signup = () => {
     axios
       .post("http://localhost:8000/user", registerData)
       .then((res) => {
-        alert("registered");
+        showToastRegisterMessage()
         navigation("/Login");
       })
       .catch((error) => {
-        alert("Not registered:" + error);
+        alert("registration error:" + error);
       });
   };
 

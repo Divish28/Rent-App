@@ -24,6 +24,12 @@ export const showToastShortlistMessage = () => {
   });
 };
 
+export const showToastRegisterMessage = () => {
+  toast.success('Registered Sucessfully', {
+      position: toast.POSITION.TOP_CENTER
+  });
+};
+
 export const showToastLoginMessage = (email) => {
   toast.success('Logged in', {
       position: toast.POSITION.TOP_CENTER
