@@ -80,7 +80,7 @@ const Login = () => {
           className="Login-input"
           id="Login-username-input"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(email) => setEmail(email.target.value)}
           type="text"
           placeholder="E-mail"
           required
@@ -90,7 +90,8 @@ const Login = () => {
           className="Login-input"
           id="Login-password-input"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          required
+          onChange={(password) => setPassword(password.target.value)}
           type={type}
           placeholder="Password"
         />

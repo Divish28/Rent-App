@@ -21,8 +21,8 @@ const Cards = () => {
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchInput !== "") {
-      const filteredData = list.filter((element) => {
-        return Object.values(element)
+      const filteredData = list.filter((filteredHouse) => {
+        return Object.values(filteredHouse)
           .join("")
           .toLowerCase()
           .includes(searchInput.toLowerCase());
@@ -59,36 +59,36 @@ const Cards = () => {
       </form>
       <div className="row d-flex cardList">
         {searchInput.length > 1
-          ? filteredResults.map((element) => {
+          ? filteredResults.map((filteredHouse) => {
               return auth ? (
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Details/${filteredHouse.id}`)}
                       variant="top"
-                      src={element.addimg}
+                      src={filteredHouse.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Details/${filteredHouse.id}`)}
                     >
                       <Card.Title>
                         <strong>City: </strong>
-                        {element.city}
+                        {filteredHouse.city}
                       </Card.Title>
                       <Card.Text>
                         <strong>Type: </strong>
-                        {element.category}
+                        {filteredHouse.category}
                       </Card.Text>
                       <Card.Text>
                         <strong>Rooms: </strong>
-                        {element.type}
+                        {filteredHouse.type}
                       </Card.Text>
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() => send(element)}
+                        onClick={() => send(filteredHouse)}
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -103,7 +103,7 @@ const Cards = () => {
                     <Card.Img
                       onClick={showToastErrorMessage}
                       variant="top"
-                      src={element.addimg}
+                      src={filteredHouse.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
@@ -112,15 +112,15 @@ const Cards = () => {
                     >
                       <Card.Title>
                         <strong>City: </strong>
-                        {element.city}
+                        {filteredHouse.city}
                       </Card.Title>
                       <Card.Text>
                         <strong>Type: </strong>
-                        {element.category}
+                        {filteredHouse.category}
                       </Card.Text>
                       <Card.Text>
                         <strong>Rooms: </strong>
-                        {element.type}
+                        {filteredHouse.type}
                       </Card.Text>
                     </Card.Body>
                     <div className="shortlistbutton">
@@ -136,36 +136,36 @@ const Cards = () => {
                 </>
               );
             })
-          : list.map((element) => {
+          : list.map((House) => {
               return auth ? (
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Details/${House.id}`)}
                       variant="top"
-                      src={element.addimg}
+                      src={House.addimg}
                       className="mt-3 cardimg"
                       alt="House"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Details/${element.id}`)}
+                      onClick={() => navigate(`/Details/${House.id}`)}
                     >
                       <Card.Title>
                         <strong>City: </strong>
-                        {element.city}
+                        {House.city}
                       </Card.Title>
                       <Card.Text>
                         <strong>Type: </strong>
-                        {element.category}
+                        {House.category}
                       </Card.Text>
                       <Card.Text>
                         <strong>Rooms: </strong>
-                        {element.type}
+                        {House.type}
                       </Card.Text>
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() => send(element)}
+                        onClick={() => send(House)}
                         variant="primary"
                         className="shortlist-button "
                       >
@@ -180,7 +180,7 @@ const Cards = () => {
                     <Card.Img
                       onClick={ showToastErrorMessage }
                       variant="top"
-                      src={element.addimg}
+                      src={House.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
@@ -189,15 +189,15 @@ const Cards = () => {
                     >
                       <Card.Title>
                         <strong>City: </strong>
-                        {element.city}
+                        {House.city}
                       </Card.Title>
                       <Card.Text>
                         <strong>Type: </strong>
-                        {element.category}
+                        {House.category}
                       </Card.Text>
                       <Card.Text>
                         <strong>Rooms: </strong>
-                        {element.type}
+                        {House.type}
                       </Card.Text>
                     </Card.Body>
                     <div className="shortlistbutton">

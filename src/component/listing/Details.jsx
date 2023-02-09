@@ -29,11 +29,11 @@ const Details = () => {
 
         <section className="container mt-5">
           <div className="iteamsdetails-detail">
-            {list.map((elem) => {
+            {list.map((details) => {
               return (
                 <>
                   <div className="items_img">
-                    <img src={elem.addimg} alt="details"/>
+                    <img src={details.addimg} alt="details"/>
                   </div>
 
                   <div className="details">
@@ -41,45 +41,45 @@ const Details = () => {
                     <tr>
                         <td>
                           <p>
-                            <strong>City</strong> : {elem.city}
+                            <strong>City</strong> : {details.city}
                           </p>
                         </td>
                       </tr>
                       <tr>
                         <td>
                           <p>
-                            <strong>Rooms</strong> : {elem.type}
+                            <strong>Rooms</strong> : {details.type}
                           </p>
                           <p>
-                            <strong>Rent</strong> : ₹{elem.rent}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Owner Name:</strong> {elem.name}
+                            <strong>Rent</strong> : ₹{details.rent}
                           </p>
                         </td>
                       </tr>
                       <tr>
                         <td>
                           <p>
-                            <strong>Owner Number:</strong> {elem.number}
+                            <strong>Owner Name:</strong> {details.name}
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <strong>Owner Number:</strong> {details.number}
                           </p>
                         </td>
                       </tr>
                       <tr>
                       <td>
                           <p>
-                            <strong>Furnished: </strong>{elem.furnished}
+                            <strong>Furnished: </strong>{details.furnished}
                           </p>
                         </td>
                       </tr>
                       <tr>
                       <td>
                           <p>
-                            <strong>Description:</strong>{elem.description}
+                            <strong>Description:</strong>{details.description}
                           </p>
                         </td>
                       </tr>

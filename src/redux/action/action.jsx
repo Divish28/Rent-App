@@ -5,7 +5,7 @@ export const ADD = (house) => {
     }
 }
 
-export const DLT=(id)=>{
+export const DELETE=(id)=>{
     return{
         type:"REMOVE_SHORTLIST",
         payload:id

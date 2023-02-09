@@ -8,27 +8,16 @@ import "../css/signup.css";
 
 const Signup = () => {
   
-  const [user,setUser] = useState(
-      {
-        userName:"",
-        email:"",
-        mobileNumber:"",
-        password:""
-      }
-    )
-  const handleChange = (event) => {
-    // const {name,value} = event.target
-    setUser(()=> {
-      return {...user,[event.target.name]:event.target.value}
-    })
-  }
-  // const [userName, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [mobileNumber, setMobileNumber] = useState("");
-  // const [password, setPassword] = useState("");
+  const [user,setUser] = useState({userName:"",email:"",mobileNumber:"",password:""})
   const [type,setType]=useState("password")
   const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
+
+  const handleChange = (users) => {
+    setUser(()=> {
+      return {...user,[users.target.name]:users.target.value}
+    })
+  }
 
   const areAllFieldsFilled = user.userName === "" || user.email===""||user.mobileNumber===""||user.password===""
 

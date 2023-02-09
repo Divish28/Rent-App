@@ -3,7 +3,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import '../css/card.css'
-import { DLT } from "../../redux/action/action";
+import { DELETE } from "../../redux/action/action";
 import { showToastRemoveMessage } from "../Toast";
 
 const ShortList = () => {
@@ -16,7 +16,7 @@ const ShortList = () => {
   const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
   const del = (id) => {
-    dispatch(DLT(id));
+    dispatch(DELETE(id));
     showToastRemoveMessage();
   };
 

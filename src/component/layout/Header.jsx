@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "../css/card.css";
-import { DLT } from "../../redux/action/action";
+import { DELETE } from "../../redux/action/action";
 import { showToastRemoveMessage,showToastLogoutMessage } from "../Toast";
 
 const Header = () => {
@@ -28,8 +28,10 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const del = (id) => {
-    dispatch(DLT(id));
+
+
+  const deleteHouse = (id) => {
+    dispatch(DELETE(id));
     showToastRemoveMessage();
   };
 
@@ -88,7 +90,7 @@ const Header = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {shortlistedHouse.map((e) => {
+                    {shortlistedHouse.map((houses) => {
                       return (
                         <>
                           <i
@@ -103,21 +105,21 @@ const Header = () => {
                                 onClick={handleClose}
                               >
                                 <img
-                                  src={e.addimg}
+                                  src={houses.addimg}
                                   className="shortlistimg"
                                   alt="House"
                                 />
                               </NavLink>
                             </td>
                             <td>
-                              <p>City: {e.city}</p>
-                              <p>Rent: {e.rent}</p>
-                              <p>Rooms: {e.type}</p>
+                              <p>City: {houses.city}</p>
+                              <p>Rent: {houses.rent}</p>
+                              <p>Rooms: {houses.type}</p>
                             </td>
                             <td className="trash">
                               <p>
                                 <i
-                                  onClick={() => del(e.id)}
+                                  onClick={() => deleteHouse(houses.id)}
                                   className="fas fa-trash largetrash"
                                 ></i>
                               </p>
