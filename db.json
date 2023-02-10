@@ -62,6 +62,27 @@
       "mobileNumber": "9738903423",
       "password": "567jk)Gf8*",
       "id": 9
+    },
+    {
+      "userName": "bhuvana",
+      "email": "bhuvana@gmail.com",
+      "mobileNumber": "34567890987",
+      "password": "45bhj(*&UJH",
+      "id": 10
+    },
+    {
+      "userName": "hindu",
+      "email": "hindu@gmail.com",
+      "mobileNumber": "8236549239",
+      "password": "873dF%*$",
+      "id": 11
+    },
+    {
+      "userName": "sainath",
+      "email": "sainath@gmail.com",
+      "mobileNumber": "873653435",
+      "password": "89034mldsfTTY^%",
+      "id": 12
     }
   ]
 }

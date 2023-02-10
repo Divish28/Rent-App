@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import "../css/card.css";
 import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
-import { showToastMessage, showToastErrorMessage, showToastShortlistMessage } from "../Toast";
+import Toast from "../Toast";
 
 const Cards = () => {
   
@@ -39,9 +39,12 @@ const Cards = () => {
 
   const dispatch = useDispatch();
 
+  const detailsWarning = () => Toast("Login to View Details","warning") 
+  const shortlistWarning = () => Toast("Login to Shortlist","warning")
+  
   const send = (e) => {
     dispatch(ADD(e));
-    showToastMessage()
+    Toast("Shortlisted !","success");
   };
 
   return (
@@ -101,14 +104,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={showToastErrorMessage}
+                      onClick={detailsWarning }
                       variant="top"
                       src={filteredHouse.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={ showToastErrorMessage}
+                      onClick={ detailsWarning }
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -125,7 +128,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={showToastShortlistMessage}
+                        onClick={shortlistWarning }
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -178,14 +181,14 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={ showToastErrorMessage }
+                      onClick={ detailsWarning }
                       variant="top"
                       src={House.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={ showToastErrorMessage }
+                      onClick={ detailsWarning  }
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -202,7 +205,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={showToastShortlistMessage}
+                        onClick={shortlistWarning }
                         variant="primary"
                         className="shortlist-button"
                       >

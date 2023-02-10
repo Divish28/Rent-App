@@ -11,7 +11,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "../css/card.css";
 import { DELETE } from "../../redux/action/action";
-import { showToastRemoveMessage,showToastLogoutMessage } from "../Toast";
+import Toast from "../Toast";
 
 const Header = () => {
 
@@ -28,11 +28,12 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
+  const logout=()=>Toast("Logged Out","Warning")
 
 
   const deleteHouse = (id) => {
     dispatch(DELETE(id));
-    showToastRemoveMessage();
+    Toast("Item Removed","error");
   };
 
   const shortlistedHouse = useSelector((state) => state.shortlistReducer.Shortlists);
@@ -52,7 +53,7 @@ const Header = () => {
               </NavLink>
               <NavLink
                 to="/Login"
-                onClick={showToastLogoutMessage}
+                onClick={logout}
                 className={"text-decoration-none text-light mx-3"}
               >
                 Logout

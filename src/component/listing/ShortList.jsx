@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import '../css/card.css'
 import { DELETE } from "../../redux/action/action";
-import { showToastRemoveMessage } from "../Toast";
+import Toast from "../Toast";
 
 const ShortList = () => {
 
@@ -17,7 +17,7 @@ const ShortList = () => {
 
   const del = (id) => {
     dispatch(DELETE(id));
-    showToastRemoveMessage();
+    Toast("Item Removed","error");
   };
 
   const compare = () => {

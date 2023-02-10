@@ -1,7 +1,9 @@
+import { Route,Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from './component/layout/Header';
 import Cards from './component/listing/Cards'
-import { Route,Routes } from 'react-router-dom';
 import Login from './component/user/Login';
 import Signup from './component/user/Signup';
 import Home from './component/layout/Home';
@@ -9,9 +11,6 @@ import ShortList from './component/listing/ShortList';
 import Invalid from './component/user/Invalid';
 import Details from './component/listing/Details';
 import ProtectedRoute from './component/user/ProtectedRoute';
-import { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const App =()=> {
   return (

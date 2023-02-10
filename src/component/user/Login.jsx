@@ -5,7 +5,7 @@ import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 import "../css/login.css";
-import { showToastLoginMessage,showToastEmailError,showToastPasswordError, showToastLoginError } from "../Toast";
+import Toast from "../Toast";
 
 const Login = () => {
   
@@ -50,23 +50,24 @@ const Login = () => {
       axios
         .get("http://localhost:8000/user?email=" + email)
         .then((res) => {
+          console.log(res)
           return res.data;
         })
         .then((resp) => {
           if (Object.keys(resp).length === 0) {
-            showToastEmailError()
+            Toast("Enter Correct E-mail",'error');
           } else {
             if (resp[0].password === password) {
-              showToastLoginMessage()
+              Toast('Logged in','success');
               sessionStorage.setItem("email", email);
               navigate("/Listing");
             } else {
-              showToastPasswordError()
+              Toast('Enter Correct Password','error');
             }
           }
         })
         .catch((err) => {
-          showToastLoginError(err)
+          Toast("Login Failed: "+err.message,"error");
         });
     }
   };
@@ -80,7 +81,7 @@ const Login = () => {
           className="Login-input"
           id="Login-username-input"
           value={email}
-          onChange={(email) => setEmail(email.target.value)}
+          onInput={(email) => setEmail(email.target.value)}
           type="text"
           placeholder="E-mail"
           required
@@ -91,7 +92,7 @@ const Login = () => {
           id="Login-password-input"
           value={password}
           required
-          onChange={(password) => setPassword(password.target.value)}
+          onInput={(password) => setPassword(password.target.value)}
           type={type}
           placeholder="Password"
         />

@@ -5,7 +5,7 @@ import {eye} from 'react-icons-kit/fa/eye'
 import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
 import Icon from "react-icons-kit";
 import "../css/signup.css";
-import { showToastRegisterMessage } from "../Toast";
+import Toast from "../Toast";
 
 const Signup = () => {
   
@@ -29,11 +29,13 @@ const Signup = () => {
     axios
       .post("http://localhost:8000/user", registerData)
       .then((res) => {
-        showToastRegisterMessage()
+        Toast("Registered Sucessfully","success");
         navigation("/Login");
+        
       })
       .catch((error) => {
-        alert("registration error:" + error);
+        Toast("Registration failed: "+error.message,"error")
+        // alert("registration error:" + error);
       });
   };
 
@@ -57,7 +59,7 @@ const Signup = () => {
           className="signup-input"
           value={user.userName}
           name="userName"
-          onChange={handleChange}
+          onInput={handleChange}
           type="text"
           required
           placeholder="User Name"
@@ -67,7 +69,7 @@ const Signup = () => {
           className="signup-input"
           name="email"
           value={user.email}
-          onChange={handleChange}
+          onInput={handleChange}
           type="email"
           title="Enter Correct Email formate"
           required
@@ -78,7 +80,7 @@ const Signup = () => {
           className="signup-input"
           name="mobileNumber"
           value={user.mobileNumber}
-          onChange={handleChange}
+          onInput={handleChange}
           required
           type="text"
           placeholder="Mobile Number"
@@ -88,7 +90,7 @@ const Signup = () => {
           className="signup-input"
           name="password"
           value={user.password}
-          onChange={handleChange}
+          onInput={handleChange}
           type={type}
           title="Password should contain atleast 8 Characters,
                  1 Uppercase, 1 Lowwercase 1 Special Character"
@@ -98,7 +100,6 @@ const Signup = () => {
         /><span onClick={handleToggle}><Icon icon={icon} /></span>
         <input
           id="signup-submit"
-          // hidden={areAllFieldsFilled}
           disabled={areAllFieldsFilled}
           type="submit"
         />
