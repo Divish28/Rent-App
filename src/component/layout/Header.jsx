@@ -39,7 +39,7 @@ const Header = () => {
   const shortlistedHouse = useSelector((state) => state.shortlistReducer.Shortlists);
 
   return (
-    <div>
+    <div className="sticky">
       {auth ? (
         <Navbar className="navbar" variant="dark">
           <Container className="nav-container">
