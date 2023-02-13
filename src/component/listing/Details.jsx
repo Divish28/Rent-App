@@ -5,9 +5,8 @@ import "../css/card.css";
 import HouseData from "../HouseData";
 
 const Details = () => {
-
   const [list, setList] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const compare = () => {
@@ -21,7 +20,6 @@ const Details = () => {
     compare();
   }, [id]);
 
-
   return (
     <>
       <div className="container mt-5 shortlist">
@@ -33,12 +31,12 @@ const Details = () => {
               return (
                 <>
                   <div className="items_img">
-                    <img src={details.addimg} alt="details"/>
+                    <img src={details.addimg} alt="details" />
                   </div>
 
                   <div className="details">
                     <Table>
-                    <tr>
+                      <tr>
                         <td>
                           <p>
                             <strong>City</strong> : {details.city}
@@ -70,22 +68,26 @@ const Details = () => {
                         </td>
                       </tr>
                       <tr>
-                      <td>
+                        <td>
                           <p>
-                            <strong>Furnished: </strong>{details.furnished}
+                            <strong>Furnished: </strong>
+                            {details.furnished}
                           </p>
                         </td>
                       </tr>
                       <tr>
-                      <td>
+                        <td>
                           <p>
-                            <strong>Description:</strong>{details.description}
+                            <strong>Description:</strong>
+                            {details.description}
                           </p>
                         </td>
                       </tr>
                       <tr>
-                      <td>
-                         <button id="goBack" onClick={()=>navigate(-1)}>GO BACK</button>
+                        <td>
+                          <button id="goBack" onClick={() => navigate(-1)}>
+                            GO BACK
+                          </button>
                         </td>
                       </tr>
                     </Table>

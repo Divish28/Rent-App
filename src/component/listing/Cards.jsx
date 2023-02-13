@@ -9,7 +9,6 @@ import { ADD } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Cards = () => {
-  
   const navigate = useNavigate();
 
   const [filteredResults, setFilteredResults] = useState([]);
@@ -33,18 +32,18 @@ const Cards = () => {
     }
   };
 
-  const handleSumbit = (e) =>{
-    e.preventDefault()
-  }
+  const handleSumbit = (e) => {
+    e.preventDefault();
+  };
 
   const dispatch = useDispatch();
 
-  const detailsWarning = () => Toast("Login to View Details","warning") 
-  const shortlistWarning = () => Toast("Login to Shortlist","warning")
-  
+  const detailsWarning = () => Toast("Login to View Details", "warning");
+  const shortlistWarning = () => Toast("Login to Shortlist", "warning");
+
   const send = (e) => {
     dispatch(ADD(e));
-    Toast("Shortlisted !","success");
+    Toast("Shortlisted !", "success");
   };
 
   return (
@@ -104,15 +103,13 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={detailsWarning }
+                      onClick={detailsWarning}
                       variant="top"
                       src={filteredHouse.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
-                    <Card.Body
-                      onClick={ detailsWarning }
-                    >
+                    <Card.Body onClick={detailsWarning}>
                       <Card.Title>
                         <strong>City: </strong>
                         {filteredHouse.city}
@@ -128,7 +125,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={shortlistWarning }
+                        onClick={shortlistWarning}
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -150,9 +147,7 @@ const Cards = () => {
                       className="mt-3 cardimg"
                       alt="House"
                     />
-                    <Card.Body
-                      onClick={() => navigate(`/Details/${House.id}`)}
-                    >
+                    <Card.Body onClick={() => navigate(`/Details/${House.id}`)}>
                       <Card.Title>
                         <strong>City: </strong>
                         {House.city}
@@ -181,15 +176,13 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={ detailsWarning }
+                      onClick={detailsWarning}
                       variant="top"
                       src={House.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
-                    <Card.Body
-                      onClick={ detailsWarning  }
-                    >
+                    <Card.Body onClick={detailsWarning}>
                       <Card.Title>
                         <strong>City: </strong>
                         {House.city}
@@ -205,13 +198,13 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={shortlistWarning }
+                        onClick={shortlistWarning}
                         variant="primary"
                         className="shortlist-button"
                       >
                         Shortlist
                       </Button>
-                      </div>
+                    </div>
                   </Card>
                 </>
               );

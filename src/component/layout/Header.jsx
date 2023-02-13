@@ -14,7 +14,6 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
-
   const auth = sessionStorage.getItem("email");
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,15 +27,16 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const logout=()=>Toast("Logged Out","Warning")
-
+  const logout = () => Toast("Logged Out", "Warning");
 
   const deleteHouse = (id) => {
     dispatch(DELETE(id));
-    Toast("Item Removed","error");
+    Toast("Item Removed", "error");
   };
 
-  const shortlistedHouse = useSelector((state) => state.shortlistReducer.Shortlists);
+  const shortlistedHouse = useSelector(
+    (state) => state.shortlistReducer.Shortlists
+  );
 
   return (
     <div className="sticky">
