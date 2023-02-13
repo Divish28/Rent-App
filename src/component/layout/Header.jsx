@@ -101,8 +101,8 @@ const Header = () => {
                           <tr>
                             <td>
                               <NavLink
-                                // to={`/ShortList/${e.id}`}
-                                to={`/ShortList`}
+                                to={`/ShortList/${houses.id}`}
+                                // to={`/ShortList/`}
                                 onClick={handleClose}
                               >
                                 <img

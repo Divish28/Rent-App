@@ -20,17 +20,17 @@ const ShortList = () => {
     Toast("Item Removed","error");
   };
 
-  const compare = () => {
-    let comparedata = shortlistedData
-    setList(comparedata);
-  };
-
   // const compare = () => {
-  //   let comparedata = shortlistedData.filter((e) => {
-  //     return e.id == id;
-  //   });
+  //   let comparedata = shortlistedData
   //   setList(comparedata);
   // };
+
+  const compare = () => {
+    let comparedata = shortlistedData.filter((e) => {
+      return e.id == id;
+    });
+    setList(comparedata);
+  };
 
   useEffect(() => {
     compare();

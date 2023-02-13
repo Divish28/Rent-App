@@ -23,7 +23,7 @@ const App =()=> {
         <Route path="/Listing" element={<Cards/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>
-        <Route path="/ShortList" element={<ProtectedRoute><ShortList/></ProtectedRoute>}/>
+        <Route path="/ShortList/:id" element={<ProtectedRoute><ShortList/></ProtectedRoute>}/>
         <Route path="/Details/:id" element={<ProtectedRoute><Details/></ProtectedRoute>}/>
         <Route path="*" element={<Invalid/>}/>
       </Routes>
