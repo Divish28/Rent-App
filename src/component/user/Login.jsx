@@ -1,73 +1,69 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {  NavLink, useNavigate } from "react-router-dom";
-import {eye} from 'react-icons-kit/fa/eye'
-import {eyeSlash} from 'react-icons-kit/fa/eyeSlash'
+import { NavLink, useNavigate } from "react-router-dom";
+import { eye } from "react-icons-kit/fa/eye";
+import { eyeSlash } from "react-icons-kit/fa/eyeSlash";
 import Icon from "react-icons-kit";
 import "../css/login.css";
 import Toast from "../Toast";
 
 const Login = () => {
-  
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");  
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const [type,setType]=useState("password")
-  const [icon,setIcon]=useState(eyeSlash)
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeSlash);
 
-  const handleToggle=()=>{
-    if(type==="password"){
+  const handleToggle = () => {
+    if (type === "password") {
       setIcon(eye);
-      setType("text")
-    }
-    else{
+      setType("text");
+    } else {
       setIcon(eyeSlash);
       setType("password");
     }
-  }
+  };
 
   useEffect(() => {
     sessionStorage.clear();
   }, []);
 
+  const validate = () => {
+    let result = true;
+    if (email === " " || email === null) {
+      result = false;
+      Toast("Enter Username","error");
+    }
+    if (password === " " || password === null) {
+      result = false;
+      Toast("Enter Password","error");
+    }
+    return result;
+  };
 
-  const loginverify = (e) => {
-    if (
-      (validate) => {
-        let result = true;
-        if (email === "" || email === null) {
-          result = false;
-          alert("Enter Username");
-        }
-        if (password === "" || password === null) {
-          result = false;
-          alert("Enter Password");
-        }
-        return result;
-      }
-    ) {
-      e.preventDefault();
+  const loginVerify = (validation) => {
+    if (validate()) {
+      validation.preventDefault();
       axios
         .get("http://localhost:8000/user?email=" + email)
         .then((res) => {
-          console.log(res)
           return res.data;
         })
         .then((resp) => {
           if (Object.keys(resp).length === 0) {
-            Toast("Enter Correct E-mail",'error');
+            Toast("Enter Correct E-mail", "error");
           } else {
             if (resp[0].password === password) {
-              Toast('Logged in','success');
+              Toast("Logged in", "success");
               sessionStorage.setItem("email", email);
               navigate("/Listing");
             } else {
-              Toast('Enter Correct Password','error');
+              Toast("Enter Correct Password", "error");
             }
           }
         })
         .catch((err) => {
-          Toast("Login Failed: "+err.message,"error");
+          Toast("Login Failed: " + err.message, "error");
         });
     }
   };
@@ -75,7 +71,7 @@ const Login = () => {
   return (
     <div className="Login">
       <h1 className="Login-Heading">Login</h1>
-      <form className="Login-form" onSubmit={loginverify}>
+      <form className="Login-form" onSubmit={loginVerify}>
         <label id="Login-username-label">Email:</label>
         <input
           className="Login-input"
@@ -84,19 +80,19 @@ const Login = () => {
           onInput={(email) => setEmail(email.target.value)}
           type="text"
           placeholder="E-mail"
-          required
         />
         <label id="Login-password-label">Password:</label>
         <input
           className="Login-input"
           id="Login-password-input"
           value={password}
-          required
           onInput={(password) => setPassword(password.target.value)}
           type={type}
           placeholder="Password"
         />
-        <span onClick={handleToggle}><Icon icon={icon} /></span>
+        <span onClick={handleToggle}>
+          <Icon icon={icon} />
+        </span>
         <input id="login-submit-button" type={"submit"} value="Submit" />
       </form>
       <div className="New-user">

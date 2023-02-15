@@ -67,7 +67,6 @@ const Header = () => {
               aria-haspopup="true"
               aria-expanded={open ? "true" : null}
               onClick={handleClick}
-              // class="text-light"
             >
               <i class="fa-regular fa-heart heart-badge"></i>
             </Badge>

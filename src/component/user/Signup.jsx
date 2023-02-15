@@ -10,6 +10,7 @@ import Toast from "../Toast";
 const Signup = () => {
   
   const [user,setUser] = useState({userName:"",email:"",mobileNumber:"",password:""})
+
   const [type,setType]=useState("password")
   const [icon,setIcon]=useState(eyeSlash)
   const navigation = useNavigate();
@@ -22,8 +23,8 @@ const Signup = () => {
 
   const areAllFieldsFilled = user.userName === "" || user.email===""||user.mobileNumber===""||user.password===""
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (registerSubmit) => {
+    registerSubmit.preventDefault();
     let registerData = { ...user };
     console.log(registerData);
     axios
@@ -35,7 +36,6 @@ const Signup = () => {
       })
       .catch((error) => {
         Toast("Registration failed: "+error.message,"error")
-        // alert("registration error:" + error);
       });
   };
 
