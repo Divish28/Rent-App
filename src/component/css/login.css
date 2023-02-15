@@ -7,8 +7,8 @@ h1.Login-Heading{
 
     display: table;
     border: 1px solid;
-    height: 250px;
-    width: 400px;
+    height: 350px;
+    width: 450px;
     padding-top: 30px;
     margin:auto;
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT14_DyooE5sLLfhRZ1bdGyO8JzN-lITT6T_g&usqp=CAU"); */
@@ -23,7 +23,7 @@ label{
 input.Login-input{
 
     display: inline-block;
-    margin: 20px;
+    margin: 20px 20px 20px 50px;
     height:2.5rem;
     width: 13rem;
     /* border: solid .01px; */

@@ -14,7 +14,7 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
-  const auth = sessionStorage.getItem("email");
+  const auth = sessionStorage.getItem("email"||"mobileNumber");
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
