@@ -38,13 +38,13 @@ const Login = () => {
     let result = true;
     if(email.length>0 && mobileNumber.length>0){
       result= false;
-      Toast("enter only one","error")
+      Toast("Enter only one","error")
     }
-    else if(email===""&&mobileNumber===""){
+   if(email===""&& mobileNumber===""){
       result = false;
-      Toast("Enter any one Field","error")
+      Toast("Enter any one","error")
     }
-    else if (email === " " || email === null) {
+     if (email === " " || email === null) {
       result = false;
       Toast("Enter Username","error");
     }
@@ -57,22 +57,26 @@ const Login = () => {
 
   const loginVerify = () => {
     if (validate()) {
+      if(email!=""&&mobileNumber===""){
       axios
-        .get("http://localhost:8000/user?email||mobileNumber" + email + mobileNumber)
+        .get("http://localhost:8000/user?email="+email)
         .then((res) => {
-          return res.data;
+          // return console.log(res.data)
+          return res.data   
         })
         .then((resp) => {
-          if (Object.keys(resp).length === 0) {
-            Toast("Enter Correct E-mail", "error");
-          } else {
-            if (resp[0].password === password) {
+          if (Object.keys(resp).length === 0)
+          {
+            console.log(Object.keys(resp))
+            Toast("Enter Valid E-mail", "error");
+          } 
+          else {
+            if (resp[0].password === password) { 
               Toast("Logged in", "success");
-              console.log(resp[0].password)
               sessionStorage.setItem("email", email);
-              sessionStorage.setItem("mobile number",mobileNumber);
+              // sessionStorage.setItem("mobile number",mobileNumber);
               navigate("/Listing");
-            } else {
+            }else {
               Toast("Enter Correct Password", "error");
             }
           }
@@ -82,6 +86,34 @@ const Login = () => {
           Toast("Login Failed: " + err.message, "error");
         });
     }
+  }
+    axios
+    .get("http://localhost:8000/user?mobileNumber="+mobileNumber)
+    .then((res) => {
+      return res.data   
+    })
+    .then((resp) => {
+      if (Object.keys(resp).length === 0)
+      {
+        console.log(Object.keys(resp))
+        Toast("Enter Valid Mobile Number", "error");
+      } 
+      else if(email === "" && mobileNumber != " ") {
+        if (resp[0].password === password) { 
+          Toast("Logged in", "success");
+          // sessionStorage.setItem("email",email);
+          sessionStorage.setItem("mobile number",mobileNumber);
+          navigate("/Listing");
+        }else {
+          Toast("Enter Correct Password", "error");
+        }
+      }
+      console.log(resp.data)
+    })
+    .catch((err) => {
+      Toast("Login Failed: " + err.message, "error");
+    });
+  
   };
 
   return (
@@ -100,9 +132,11 @@ const Login = () => {
         <label id="Login-username-label">Mobile Number:</label>
         <input
           className="Login-input"
-          id="Login-username-input"
+          id="Login-Mobile-input"
           value={mobileNumber}
+          pattern="^[0-9]{10}$"
           onInput={(mobileNumber) => setMobileNumber(mobileNumber.target.value)}
+          title="Enter Mobile Number"
           type="text"
           placeholder="Mobile Number"
         />
@@ -128,3 +162,20 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+  // .then(res => {
+  //   const user = res.data[0].username;
+  //   const password = res.data[0].password;
+  //   const username = this.state.username;
+  //   const passwordEntered = this.state.password;
+  //   if(username === '' && passwordEntered === ''){
+  //     document.getElementById('status').innerHTML = '<p>Please Enter A Valid Username and Password</p>';
+  //   }else if(user === username && passwordEntered === password){
+  //     document.getElementById('status').innerHTML = '';
+  //     console.log(user, password)
+  //   }else{
+  //       document.getElementById('status').innerHTML = '<p>Please Enter A Valid Username and Password</p>';
+  //   }
+  // })

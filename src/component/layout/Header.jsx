@@ -14,7 +14,9 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
-  const auth = sessionStorage.getItem("email"||"mobileNumber");
+  const auth = sessionStorage.getItem(
+    "email" || "mobileNumber"
+  );
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -43,18 +45,24 @@ const Header = () => {
       {auth ? (
         <Navbar className="navbar" variant="dark">
           <Container className="nav-container">
-            <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
+            <Navbar.Brand className="brand-Text">
+              Rental
+            </Navbar.Brand>
             <Nav className="me-auto">
               <NavLink
                 to="/Listing"
-                className={"text-decoration-none text-light mx-3"}
+                className={
+                  "text-decoration-none text-light mx-3"
+                }
               >
                 House List
               </NavLink>
               <NavLink
                 to="/Login"
                 onClick={logout}
-                className={"text-decoration-none text-light mx-3"}
+                className={
+                  "text-decoration-none text-light mx-3"
+                }
               >
                 Logout
               </NavLink>
@@ -119,7 +127,9 @@ const Header = () => {
                             <td className="trash">
                               <p>
                                 <i
-                                  onClick={() => deleteHouse(houses.id)}
+                                  onClick={() =>
+                                    deleteHouse(houses.id)
+                                  }
                                   className="fas fa-trash largetrash"
                                 ></i>
                               </p>
@@ -145,23 +155,31 @@ const Header = () => {
       ) : (
         <Navbar className="navbar" variant="dark">
           <Container>
-            <Navbar.Brand className="brand-Text">Rental</Navbar.Brand>
+            <Navbar.Brand className="brand-Text">
+              Rental
+            </Navbar.Brand>
             <Nav className="me-auto">
               <NavLink
                 to="/Listing"
-                className={"text-decoration-none text-light mx-3"}
+                className={
+                  "text-decoration-none text-light mx-3"
+                }
               >
                 House List
               </NavLink>
               <NavLink
                 to="/Signup"
-                className={"text-decoration-none text-light mx-3"}
+                className={
+                  "text-decoration-none text-light mx-3"
+                }
               >
                 Register
               </NavLink>
               <NavLink
                 to="/Login"
-                className={"text-decoration-none text-light mx-3"}
+                className={
+                  "text-decoration-none text-light mx-3"
+                }
               >
                 Login
               </NavLink>

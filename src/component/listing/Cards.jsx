@@ -11,7 +11,9 @@ import Toast from "../Toast";
 const Cards = () => {
   const navigate = useNavigate();
 
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState(
+    []
+  );
   const [searchInput, setSearchInput] = useState("");
   const [list, setList] = useState(HouseData);
 
@@ -38,8 +40,10 @@ const Cards = () => {
 
   const dispatch = useDispatch();
 
-  const detailsWarning = () => Toast("Login to View Details", "warning");
-  const shortlistWarning = () => Toast("Login to Shortlist", "warning");
+  const detailsWarning = () =>
+    Toast("Login to View Details", "warning");
+  const shortlistWarning = () =>
+    Toast("Login to Shortlist", "warning");
 
   const send = (e) => {
     dispatch(ADD(e));
@@ -49,7 +53,10 @@ const Cards = () => {
   return (
     <div className="container mt-3 Listing">
       <h2 className="text-center mt-4">HOUSE LIST</h2>
-      <form onSubmit={handleSumbit} className="Search-form mt-4">
+      <form
+        onSubmit={handleSumbit}
+        className="Search-form mt-4"
+      >
         <label className="search-label"> Filter By :</label>
         <input
           onChange={(e) => searchItems(e.target.value)}
@@ -66,14 +73,22 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${filteredHouse.id}`)}
+                      onClick={() =>
+                        navigate(
+                          `/Details/${filteredHouse.id}`
+                        )
+                      }
                       variant="top"
                       src={filteredHouse.addimg}
                       alt="House"
                       className="mt-3 cardimg"
                     />
                     <Card.Body
-                      onClick={() => navigate(`/Details/${filteredHouse.id}`)}
+                      onClick={() =>
+                        navigate(
+                          `/Details/${filteredHouse.id}`
+                        )
+                      }
                     >
                       <Card.Title>
                         <strong>City: </strong>
@@ -141,13 +156,19 @@ const Cards = () => {
                 <>
                   <Card className="mx-2 mx-4 card_style">
                     <Card.Img
-                      onClick={() => navigate(`/Details/${House.id}`)}
+                      onClick={() =>
+                        navigate(`/Details/${House.id}`)
+                      }
                       variant="top"
                       src={House.addimg}
                       className="mt-3 cardimg"
                       alt="House"
                     />
-                    <Card.Body onClick={() => navigate(`/Details/${House.id}`)}>
+                    <Card.Body
+                      onClick={() =>
+                        navigate(`/Details/${House.id}`)
+                      }
+                    >
                       <Card.Title>
                         <strong>City: </strong>
                         {House.city}

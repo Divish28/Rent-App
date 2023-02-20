@@ -21,7 +21,7 @@ const Signup = () => {
     })
   }
 
-  const areAllFieldsFilled = user.userName === "" || user.email===""||user.mobileNumber===""||user.password===""
+  const areAllFieldsFilled = user.userName===""||user.email===""||user.mobileNumber===""||user.password===""
 
   const handleSubmit = (registerSubmit) => {
     registerSubmit.preventDefault();
