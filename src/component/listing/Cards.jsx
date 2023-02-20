@@ -17,7 +17,7 @@ const Cards = () => {
   const [searchInput, setSearchInput] = useState("");
   const [list, setList] = useState(HouseData);
 
-  const auth = sessionStorage.getItem("email");
+  const auth = sessionStorage.getItem("session data");
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);

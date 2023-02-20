@@ -57,7 +57,7 @@ const Login = () => {
 
   const loginVerify = () => {
     if (validate()) {
-      if(email!=""&&mobileNumber===""){
+      if(email!="" && mobileNumber===""){
       axios
         .get("http://localhost:8000/user?email="+email)
         .then((res) => {
@@ -73,7 +73,7 @@ const Login = () => {
           else {
             if (resp[0].password === password) { 
               Toast("Logged in", "success");
-              sessionStorage.setItem("email", email);
+              sessionStorage.setItem("session data", email);
               // sessionStorage.setItem("mobile number",mobileNumber);
               navigate("/Listing");
             }else {
@@ -86,8 +86,8 @@ const Login = () => {
           Toast("Login Failed: " + err.message, "error");
         });
     }
-  }
-    axios
+    else {
+      axios
     .get("http://localhost:8000/user?mobileNumber="+mobileNumber)
     .then((res) => {
       return res.data   
@@ -102,7 +102,7 @@ const Login = () => {
         if (resp[0].password === password) { 
           Toast("Logged in", "success");
           // sessionStorage.setItem("email",email);
-          sessionStorage.setItem("mobile number",mobileNumber);
+          sessionStorage.setItem("session data",mobileNumber);
           navigate("/Listing");
         }else {
           Toast("Enter Correct Password", "error");
@@ -113,7 +113,8 @@ const Login = () => {
     .catch((err) => {
       Toast("Login Failed: " + err.message, "error");
     });
-  
+  }
+  } 
   };
 
   return (

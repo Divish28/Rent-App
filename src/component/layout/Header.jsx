@@ -15,7 +15,7 @@ import Toast from "../Toast";
 
 const Header = () => {
   const auth = sessionStorage.getItem(
-    "email" || "mobileNumber"
+    "session data"
   );
 
   const [anchorEl, setAnchorEl] = useState(null);
