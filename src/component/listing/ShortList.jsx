@@ -15,7 +15,7 @@ const ShortList = () => {
 
   const shortlistedData = useSelector((state) => state.shortlistReducer.Shortlists);
 
-  const del = (id) => {
+  const deleteHouse = (id) => {
     dispatch(DELETE(id));
     Toast("Item Removed","error");
   };
@@ -100,7 +100,7 @@ const ShortList = () => {
                       <td className="Ltrash">
                           <p>
                             <i
-                              onClick={() => del(elem.id)}
+                              onClick={() => deleteHouse(elem.id)}
                               className="fas fa-trash largetrash"
                             ></i>
                           </p>

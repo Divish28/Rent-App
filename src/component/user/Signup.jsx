@@ -82,6 +82,8 @@ const Signup = () => {
           value={user.mobileNumber}
           onInput={handleChange}
           required
+          pattern="^[0-9]{10}$"
+          title="Enter Mobile Number"
           type="text"
           placeholder="Mobile Number"
         />

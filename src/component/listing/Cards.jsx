@@ -45,7 +45,7 @@ const Cards = () => {
   const shortlistWarning = () =>
     Toast("Login to Shortlist", "warning");
 
-  const send = (e) => {
+  const shortlist = (e) => {
     dispatch(ADD(e));
     Toast("Shortlisted !", "success");
   };
@@ -105,7 +105,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() => send(filteredHouse)}
+                        onClick={() => shortlist(filteredHouse)}
                         variant="primary"
                         className="shortlist-button"
                       >
@@ -184,7 +184,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() => send(House)}
+                        onClick={() => shortlist(House)}
                         variant="primary"
                         className="shortlist-button "
                       >

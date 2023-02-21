@@ -61,7 +61,6 @@ const Login = () => {
       axios
         .get("http://localhost:8000/user?email="+email)
         .then((res) => {
-          // return console.log(res.data)
           return res.data   
         })
         .then((resp) => {
@@ -74,13 +73,11 @@ const Login = () => {
             if (resp[0].password === password) { 
               Toast("Logged in", "success");
               sessionStorage.setItem("session data", email);
-              // sessionStorage.setItem("mobile number",mobileNumber);
               navigate("/Listing");
             }else {
               Toast("Enter Correct Password", "error");
             }
           }
-          console.log(resp.data)
         })
         .catch((err) => {
           Toast("Login Failed: " + err.message, "error");
@@ -101,7 +98,6 @@ const Login = () => {
       else if(email === "" && mobileNumber != " ") {
         if (resp[0].password === password) { 
           Toast("Logged in", "success");
-          // sessionStorage.setItem("email",email);
           sessionStorage.setItem("session data",mobileNumber);
           navigate("/Listing");
         }else {
@@ -163,20 +159,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-  // .then(res => {
-  //   const user = res.data[0].username;
-  //   const password = res.data[0].password;
-  //   const username = this.state.username;
-  //   const passwordEntered = this.state.password;
-  //   if(username === '' && passwordEntered === ''){
-  //     document.getElementById('status').innerHTML = '<p>Please Enter A Valid Username and Password</p>';
-  //   }else if(user === username && passwordEntered === password){
-  //     document.getElementById('status').innerHTML = '';
-  //     console.log(user, password)
-  //   }else{
-  //       document.getElementById('status').innerHTML = '<p>Please Enter A Valid Username and Password</p>';
-  //   }
-  // })
