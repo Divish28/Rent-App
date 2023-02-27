@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
@@ -14,6 +15,7 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
+  // const[auth,setAuth]=useState()
   const auth = sessionStorage.getItem(
     "session data"
   );
@@ -29,7 +31,9 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const logout = () => Toast("Logged Out", "Warning");
+  const logout = () => {
+    sessionStorage.clear()
+    Toast("Logged Out", "Warning")};
 
   const deleteHouse = (id) => {
     dispatch(DELETE(id));
@@ -39,6 +43,8 @@ const Header = () => {
   const shortlistedHouse = useSelector(
     (state) => state.shortlistReducer.Shortlists
   );
+//  useEffect(()=>setAuth(sessionStorage.getItem("session data")
+//  ),[])
 
   return (
     <div className="sticky">
@@ -88,7 +94,7 @@ const Header = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            {shortlistedHouse.length ? (
+            {shortlistedHouse.length>0 ? (
               <div className="card_details">
                 <Table>
                   <thead>

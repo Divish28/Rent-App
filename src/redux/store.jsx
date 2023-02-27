@@ -6,7 +6,7 @@ const saveToLocalStorage=(state)=> {
       const storededState = JSON.stringify(state);
       sessionStorage.setItem("State", storededState);
     } catch (e) {
-      console.warn(e);
+      return e
     }
   }
   const loadFromLocalStorage=()=> {
@@ -17,7 +17,6 @@ const saveToLocalStorage=(state)=> {
     }
       return JSON.parse(storededState);
     } catch (e) {
-      console.warn(e);
       return undefined;
     }
   }

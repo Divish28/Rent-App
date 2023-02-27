@@ -21,84 +21,90 @@ const Details = () => {
   }, [id]);
 
   return (
-    <>
-      <div className="container mt-5 shortlist">
-        <h2 className="text-center">DETAILS</h2>
+    <div className="container mt-5 shortlist">
+      <h2 className="text-center">DETAILS</h2>
 
-        <section className="container mt-5">
-          <div className="iteamsdetails-detail">
-            {list.map((details) => {
-              return (
-                <>
-                  <div className="items_img">
-                    <img src={details.addimg} alt="details" />
-                  </div>
+      <section className="container mt-5">
+        <div className="iteamsdetails-detail">
+          {list.map((details) => {
+            return (
+              <>
+                <div className="items_img">
+                  <img src={details.addimg} alt="details" />
+                </div>
 
-                  <div className="details">
-                    <Table>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>City</strong> : {details.city}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Rooms</strong> : {details.type}
-                          </p>
-                          <p>
-                            <strong>Rent</strong> : ₹{details.rent}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Owner Name:</strong> {details.name}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Owner Number:</strong> {details.number}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Furnished: </strong>
-                            {details.furnished}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>
-                            <strong>Description:</strong>
-                            {details.description}
-                          </p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <button id="goBack" onClick={() => navigate(-1)}>
-                            GO BACK
-                          </button>
-                        </td>
-                      </tr>
-                    </Table>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-        </section>
-      </div>
-    </>
+                <div className="details">
+                  <Table>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>City</strong> :{" "}
+                          {details.city}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Rooms</strong> :{" "}
+                          {details.type}
+                        </p>
+                        <p>
+                          <strong>Rent</strong> : ₹
+                          {details.rent}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Owner Name:</strong>{" "}
+                          {details.name}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Owner Number:</strong>{" "}
+                          {details.number}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Furnished: </strong>
+                          {details.furnished}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Description:</strong>
+                          {details.description}
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          id="goBack"
+                          onClick={() => navigate(-1)}
+                        >
+                          GO BACK
+                        </button>
+                      </td>
+                    </tr>
+                  </Table>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </section>
+    </div>
   );
 };
 export default Details;

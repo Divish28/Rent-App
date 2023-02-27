@@ -38,19 +38,11 @@ const Login = () => {
     let result = true;
     if(email.length>0 && mobileNumber.length>0){
       result= false;
-      Toast("Enter only one","error")
+      Toast("Enter Email or Mobile number","error")
     }
-   if(email===""&& mobileNumber===""){
+   if(email==="" && mobileNumber===""){
       result = false;
       Toast("Enter any one","error")
-    }
-     if (email === " " || email === null) {
-      result = false;
-      Toast("Enter Username","error");
-    }
-    else if (password === " " || password === null) {
-      result = false;
-      Toast("Enter Password","error");
     }
     return result;
   };
@@ -66,7 +58,6 @@ const Login = () => {
         .then((resp) => {
           if (Object.keys(resp).length === 0)
           {
-            console.log(Object.keys(resp))
             Toast("Enter Valid E-mail", "error");
           } 
           else {
@@ -96,6 +87,10 @@ const Login = () => {
         Toast("Enter Valid Mobile Number", "error");
       } 
       else if(email === "" && mobileNumber != " ") {
+        if(password ===""){
+          Toast("Enter Password","error")
+        }
+        else{
         if (resp[0].password === password) { 
           Toast("Logged in", "success");
           sessionStorage.setItem("session data",mobileNumber);
@@ -104,7 +99,7 @@ const Login = () => {
           Toast("Enter Correct Password", "error");
         }
       }
-      console.log(resp.data)
+    } 
     })
     .catch((err) => {
       Toast("Login Failed: " + err.message, "error");

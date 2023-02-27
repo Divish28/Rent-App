@@ -7,16 +7,16 @@ import "../css/card.css";
 import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
 import Toast from "../Toast";
+import { useEffect } from "react";
 
 const Cards = () => {
   const navigate = useNavigate();
 
-  const [filteredResults, setFilteredResults] = useState(
-    []
-  );
+  const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [list, setList] = useState(HouseData);
 
+  // const[auth,setAuth]=useState()
   const auth = sessionStorage.getItem("session data");
 
   const searchItems = (searchValue) => {
@@ -49,6 +49,7 @@ const Cards = () => {
     dispatch(ADD(e));
     Toast("Shortlisted !", "success");
   };
+  // useEffect(()=>setAuth(()=>sessionStorage.getItem("session data")),[])
 
   return (
     <div className="container mt-3 Listing">
@@ -184,7 +185,7 @@ const Cards = () => {
                     </Card.Body>
                     <div className="shortlistbutton">
                       <Button
-                        onClick={() => shortlist(House)}
+                        onClick={() =>shortlist(House)}
                         variant="primary"
                         className="shortlist-button "
                       >
