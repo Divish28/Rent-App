@@ -15,10 +15,18 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
-  // const[auth,setAuth]=useState()
-  const auth = sessionStorage.getItem(
-    "session data"
-  );
+
+  const[loginAuth,setLoginAuth]=useState("")
+
+  const auth =()=>{ 
+    const user=sessionStorage.getItem("session data")
+    if(user){
+      setLoginAuth(user)
+    }
+  };
+  useEffect(()=>{
+    auth()
+  },[])
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -43,12 +51,11 @@ const Header = () => {
   const shortlistedHouse = useSelector(
     (state) => state.shortlistReducer.Shortlists
   );
-//  useEffect(()=>setAuth(sessionStorage.getItem("session data")
-//  ),[])
+  
 
   return (
     <div className="sticky">
-      {auth ? (
+      {loginAuth ? (
         <Navbar className="navbar" variant="dark">
           <Container className="nav-container">
             <Navbar.Brand className="brand-Text">
@@ -82,7 +89,7 @@ const Header = () => {
               aria-expanded={open ? "true" : null}
               onClick={handleClick}
             >
-              <i class="fa-regular fa-heart heart-badge"></i>
+              <i className="fa-regular fa-heart heart-badge"></i>
             </Badge>
           </Container>
           <Menu

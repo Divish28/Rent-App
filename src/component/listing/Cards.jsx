@@ -7,7 +7,6 @@ import "../css/card.css";
 import HouseData from "../HouseData";
 import { ADD } from "../../redux/action/action";
 import Toast from "../Toast";
-import { useEffect } from "react";
 
 const Cards = () => {
   const navigate = useNavigate();
@@ -16,7 +15,6 @@ const Cards = () => {
   const [searchInput, setSearchInput] = useState("");
   const [list, setList] = useState(HouseData);
 
-  // const[auth,setAuth]=useState()
   const auth = sessionStorage.getItem("session data");
 
   const searchItems = (searchValue) => {
@@ -28,7 +26,7 @@ const Cards = () => {
           .toLowerCase()
           .includes(searchInput.toLowerCase());
       });
-      setFilteredResults(filteredData);
+        setFilteredResults(filteredData);
     } else {
       setFilteredResults(list);
     }
@@ -49,7 +47,6 @@ const Cards = () => {
     dispatch(ADD(e));
     Toast("Shortlisted !", "success");
   };
-  // useEffect(()=>setAuth(()=>sessionStorage.getItem("session data")),[])
 
   return (
     <div className="container mt-3 Listing">
@@ -155,7 +152,7 @@ const Cards = () => {
           : list.map((House) => {
               return auth ? (
                 <>
-                  <Card className="mx-2 mx-4 card_style">
+                  <Card key={House.id} className="mx-2 mx-4 card_style">
                     <Card.Img
                       onClick={() =>
                         navigate(`/Details/${House.id}`)

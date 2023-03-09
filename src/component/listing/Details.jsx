@@ -38,7 +38,7 @@ const Details = () => {
                     <tr>
                       <td>
                         <p>
-                          <strong>City</strong> :{" "}
+                          <strong>City</strong> :
                           {details.city}
                         </p>
                       </td>
@@ -46,7 +46,7 @@ const Details = () => {
                     <tr>
                       <td>
                         <p>
-                          <strong>Rooms</strong> :{" "}
+                          <strong>Rooms</strong> :
                           {details.type}
                         </p>
                         <p>
@@ -58,7 +58,7 @@ const Details = () => {
                     <tr>
                       <td>
                         <p>
-                          <strong>Owner Name:</strong>{" "}
+                          <strong>Owner Name:</strong>
                           {details.name}
                         </p>
                       </td>
@@ -66,7 +66,7 @@ const Details = () => {
                     <tr>
                       <td>
                         <p>
-                          <strong>Owner Number:</strong>{" "}
+                          <strong>Owner Number:</strong>
                           {details.number}
                         </p>
                       </td>
