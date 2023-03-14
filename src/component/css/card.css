@@ -83,7 +83,7 @@ body{
     margin-right: 10rem;
 }
 
-.Search-form{ 
+.search{ 
     display: table;
     margin: auto;
 }
@@ -93,6 +93,8 @@ body{
 }
 
 .search-bar{
+    display:table;
+    margin: auto;
     border:solid 1px;
     display: inline-block;
     margin: 20px;   

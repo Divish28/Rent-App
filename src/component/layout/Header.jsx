@@ -16,18 +16,20 @@ import Toast from "../Toast";
 
 const Header = () => {
 
-  const[loginAuth,setLoginAuth]=useState("")
+  const loginAuth=sessionStorage.getItem("session data")
 
-  const auth =()=>{ 
-    const user=sessionStorage.getItem("session data")
-    if(user){
-      setLoginAuth(user)
-    }
-  };
-  useEffect(()=>{
-    auth()
-  },[])
-
+  // const loginAuth=(props) => this.prop  
+  // const[loginAuth,setLoginAuth]=useState("")
+  // const auth =()=>{ 
+  //   const user=sessionStorage.getItem("session data")
+  //   if(user){
+  //     setLoginAuth(user)
+  //   }
+  // };
+  // useEffect(()=>{
+  //   auth()
+  // },[])
+  
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

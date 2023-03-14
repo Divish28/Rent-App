@@ -40,34 +40,40 @@ const Login = () => {
       result= false;
       Toast("Enter Email or Mobile number","error")
     }
-   if(email==="" && mobileNumber===""){
+    if(email==="" && mobileNumber==="" && password !==""){
       result = false;
       Toast("Enter any one","error")
+    }
+    if (email==="" && mobileNumber==="" && password === ""){
+      result = false;
+      Toast("Enter the credentials","error")
     }
     return result;
   };
 
   const loginVerify = () => {
     if (validate()) {
-      if(email!="" && mobileNumber===""){
+      if(email!=="" && mobileNumber===""){
       axios
         .get("http://localhost:8000/user?email="+email)
         .then((res) => {
-          return res.data   
-        })
-        .then((resp) => {
-          if (Object.keys(resp).length === 0)
+          const response = res.data   
+          if (Object.keys(response).length === 0)
           {
             Toast("Enter Valid E-mail", "error");
           } 
           else {
-            if (resp[0].password === password) { 
+            if(password===""){
+              Toast("Enter Password","error")
+            }
+            else{
+            if (response[0].password === password) { 
               Toast("Logged in", "success");
               sessionStorage.setItem("session data", email);
               navigate("/Listing");
             }else {
               Toast("Enter Correct Password", "error");
-            }
+            }}
           }
         })
         .catch((err) => {
@@ -78,20 +84,18 @@ const Login = () => {
       axios
     .get("http://localhost:8000/user?mobileNumber="+mobileNumber)
     .then((res) => {
-      return res.data   
-    })
-    .then((resp) => {
-      if (Object.keys(resp).length === 0)
+      const response = res.data
+      if (Object.keys(response).length === 0)
       {
-        console.log(Object.keys(resp))
+        console.log(Object.keys(response))
         Toast("Enter Valid Mobile Number", "error");
       } 
-      else if(email === "" && mobileNumber != " ") {
+      else{
         if(password ===""){
           Toast("Enter Password","error")
         }
         else{
-        if (resp[0].password === password) { 
+        if (response[0].password === password) { 
           Toast("Logged in", "success");
           sessionStorage.setItem("session data",mobileNumber);
           navigate("/Listing");
@@ -99,7 +103,7 @@ const Login = () => {
           Toast("Enter Correct Password", "error");
         }
       }
-    } 
+    }    
     })
     .catch((err) => {
       Toast("Login Failed: " + err.message, "error");

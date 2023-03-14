@@ -32,10 +32,6 @@ const Cards = () => {
     }
   };
 
-  const handleSumbit = (e) => {
-    e.preventDefault();
-  };
-
   const dispatch = useDispatch();
 
   const detailsWarning = () =>
@@ -51,19 +47,16 @@ const Cards = () => {
   return (
     <div className="container mt-3 Listing">
       <h2 className="text-center mt-4">HOUSE LIST</h2>
-      <form
-        onSubmit={handleSumbit}
-        className="Search-form mt-4"
-      >
+      <div className="search">
         <label className="search-label"> Filter By :</label>
-        <input
+        <input 
           onChange={(e) => searchItems(e.target.value)}
           className="search-bar mt-4"
           type="search"
           placeholder=" City or Type or Rooms"
         />
-        {/* <input classname="search-button" type="submit" value="Submit" /> */}
-      </form>
+        </div>
+        
       <div className="row d-flex cardList">
         {searchInput.length > 1
           ? filteredResults.map((filteredHouse) => {
