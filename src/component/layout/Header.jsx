@@ -16,18 +16,33 @@ import Toast from "../Toast";
 
 const Header = () => {
 
-  const loginAuth=sessionStorage.getItem("session data")
+  // const loginAuth=sessionStorage.getItem("session data")
 
-  // const loginAuth=(props) => this.prop  
-  // const[loginAuth,setLoginAuth]=useState("")
+    const[loginAuth,setLoginAuth]=useState(sessionStorage.getItem("session data"))
+
   // const auth =()=>{ 
   //   const user=sessionStorage.getItem("session data")
   //   if(user){
   //     setLoginAuth(user)
   //   }
   // };
+  
   // useEffect(()=>{
+      // const auth =()=>{ 
+  //   const user=sessionStorage.getItem("session data")
+  //   if(user){
+  //     setLoginAuth(user)
+  //   }
   //   auth()
+  // },[])
+
+  // useEffect(()=>{
+  //   const userData = JSON.parse(sessionStorage.getItem("session data"));
+  //   if (userData && userData.token) {
+  //     setLoginAuth(true);
+  //   } else {
+  //     setLoginAuth(false);
+  //   }
   // },[])
   
   const [anchorEl, setAnchorEl] = useState(null);

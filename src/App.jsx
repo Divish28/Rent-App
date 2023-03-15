@@ -18,7 +18,8 @@ const App =()=> {
       <Header/>
       <ToastContainer/>
       <Routes>
-        <Route path="/" element={<Login/>}/>
+        {/* <Route exact path="/" element={<Home/>}/> */}
+        <Route exact path="/" element={<Login/>}/>
         <Route path="/Home" element={<Home/>}/>
         <Route path="/Listing" element={<Cards/>}/>
         <Route path="/Login" element={<Login/>}/>
