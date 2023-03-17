@@ -15,35 +15,6 @@ import { DELETE } from "../../redux/action/action";
 import Toast from "../Toast";
 
 const Header = () => {
-
-  // const loginAuth=sessionStorage.getItem("session data")
-
-    const[loginAuth,setLoginAuth]=useState(sessionStorage.getItem("session data"))
-
-  // const auth =()=>{ 
-  //   const user=sessionStorage.getItem("session data")
-  //   if(user){
-  //     setLoginAuth(user)
-  //   }
-  // };
-  
-  // useEffect(()=>{
-      // const auth =()=>{ 
-  //   const user=sessionStorage.getItem("session data")
-  //   if(user){
-  //     setLoginAuth(user)
-  //   }
-  //   auth()
-  // },[])
-
-  // useEffect(()=>{
-  //   const userData = JSON.parse(sessionStorage.getItem("session data"));
-  //   if (userData && userData.token) {
-  //     setLoginAuth(true);
-  //   } else {
-  //     setLoginAuth(false);
-  //   }
-  // },[])
   
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -69,17 +40,15 @@ const Header = () => {
     (state) => state.shortlistReducer.Shortlists
   );
   
-
-  return (
-    <div className="sticky">
-      {loginAuth ? (
-        <Navbar className="navbar" variant="dark">
-          <Container className="nav-container">
-            <Navbar.Brand className="brand-Text">
-              Rental
-            </Navbar.Brand>
-            <Nav className="me-auto">
-              <NavLink
+  return(
+    <div >
+         <Navbar className="navbar" variant="dark">
+           <Container className="nav-container">
+             <Navbar.Brand className="brand-Text">
+               Rental
+             </Navbar.Brand>
+             <Nav className="me-auto">
+             <NavLink
                 to="/Listing"
                 className={
                   "text-decoration-none text-light mx-3"
@@ -182,43 +151,9 @@ const Header = () => {
             )}
           </Menu>
         </Navbar>
-      ) : (
-        <Navbar className="navbar" variant="dark">
-          <Container>
-            <Navbar.Brand className="brand-Text">
-              Rental
-            </Navbar.Brand>
-            <Nav className="me-auto">
-              <NavLink
-                to="/Listing"
-                className={
-                  "text-decoration-none text-light mx-3"
-                }
-              >
-                House List
-              </NavLink>
-              <NavLink
-                to="/Signup"
-                className={
-                  "text-decoration-none text-light mx-3"
-                }
-              >
-                Register
-              </NavLink>
-              <NavLink
-                to="/Login"
-                className={
-                  "text-decoration-none text-light mx-3"
-                }
-              >
-                Login
-              </NavLink>
-            </Nav>
-          </Container>
-        </Navbar>
-      )}
+
     </div>
-  );
+  )
 };
 
 export default Header;
